@@ -1,0 +1,10 @@
+*
+!.gitignore
+!.vimrc
+# from stack overflow 5261959, why it works I don't know
+!.vim/
+!.vim/*
+#!.vim/**/*
+!.tmux.conf
+!.bashrc
+!.minttyrc

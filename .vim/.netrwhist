@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/mike/PySubstance'
+let g:netrw_dirhist_2='/home/mike/HtmlBooker'
+let g:netrw_dirhist_3='/home/mike/latex-homework-template'
+let g:netrw_dirhist_4='/home/mike/PySubstance'
+let g:netrw_dirhist_5='/home/mike/SharedShoppingList'
+let g:netrw_dirhist_6='/home/mike/SharedShoppingList/templates'
+let g:netrw_dirhist_7='/home/mike/SharedShoppingList/src'
+let g:netrw_dirhist_8='/home/mike/SharedShoppingList/src/java'
+let g:netrw_dirhist_9='/mnt/d/Contingency/ProjContDev/Saved/Logs'
