@@ -20,17 +20,16 @@ Plugin 'vim-airline/vim-airline-themese'
 call vundle#end()
 
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set st=4 sts=4
+set st=2 sts=2
 
 " --- End Vundle ---
 
-
 " --- General Settings ---
 
-set visualbell
+" set visualbell
 set backspace=indent,eol,start
 set ruler
 set number
@@ -78,6 +77,8 @@ inoremap <c-j> <esc>
 inoremap <s-BS> <del>
 nnoremap <c-j> ddp
 nnoremap <c-k> ddkP
+nnoremap <c-l> xp
+nnoremap <c-h> xhp
 nnoremap <localleader>a ea
 set timeoutlen=1000
 
@@ -106,4 +107,3 @@ augroup filespecifics
   " autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
   " autocmd FileType vim nnoremap <buffer> <localleader>C A  " <esc>
 augroup END
-
