@@ -114,8 +114,11 @@ if ! shopt -oq posix; then
 fi
 
 # silly colors added
-export TERM="xterm-256color"
+export TERM="screen-256color"
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/mike/.sdkman"
 [[ -s "/home/mike/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mike/.sdkman/bin/sdkman-init.sh"
+
+
