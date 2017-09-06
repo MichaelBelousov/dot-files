@@ -1,3 +1,5 @@
+# this is potentially a huge security liability and I will increase my github security to compensate 
+# it would however require some stupidity on my part to actually push confidential data (it would be very much delayed
 *
 !.gitignore
 !.vimrc
@@ -8,3 +10,4 @@
 !.tmux.conf
 !.bashrc
 !.minttyrc
+!.ssh/config
