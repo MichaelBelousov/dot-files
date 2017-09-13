@@ -80,6 +80,7 @@ nnoremap <c-k> ddkP
 nnoremap <c-l> xp
 nnoremap <c-h> xhp
 nnoremap <localleader>a ea
+nnoremap <localleader>b <c-^>
 set timeoutlen=1000
 
 augroup pythonfiles
