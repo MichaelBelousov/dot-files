@@ -45,7 +45,7 @@ set mouse=a
 
 " --- altercation/vim-colors-solarized settings ---
 
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
 
@@ -78,9 +78,10 @@ inoremap <s-BS> <del>
 nnoremap <c-j> ddp
 nnoremap <c-k> ddkP
 nnoremap <c-l> xp
-nnoremap <c-h> xhp
+nnoremap <c-h> xhhp
 nnoremap <localleader>a ea
-nnoremap <localleader>b <c-^>
+nnoremap <localleader>B <c-^>
+nnoremap <localleader>b ``
 nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
 set timeoutlen=1000
 
