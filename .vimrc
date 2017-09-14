@@ -81,6 +81,7 @@ nnoremap <c-l> xp
 nnoremap <c-h> xhp
 nnoremap <localleader>a ea
 nnoremap <localleader>b <c-^>
+nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
 set timeoutlen=1000
 
 augroup pythonfiles
