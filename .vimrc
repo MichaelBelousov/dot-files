@@ -90,10 +90,11 @@ inoremap <s-BS> <del>
 nnoremap <c-j> ddp
 nnoremap <c-k> ddkP
 nnoremap <c-l> xp
-nnoremap <c-h> xhp
+nnoremap <c-h> xhhp
 nnoremap <localleader>a ea
-nnoremap <localleader>b ``
 nnoremap <localleader>B <c-^>
+nnoremap <localleader>b ``
+nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
 set timeoutlen=1000
 
 augroup pythonfiles
