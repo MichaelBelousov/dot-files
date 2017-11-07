@@ -114,8 +114,9 @@ if ! shopt -oq posix; then
 fi
 
 # silly colors added
-export TERM="screen-256color"
+export TERM="screen-256color" # -bce
 export PROMPT_COMMAND=''
+export PYTHONSTARTUP=$HOME/.pythonrc
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/mike/.sdkman"

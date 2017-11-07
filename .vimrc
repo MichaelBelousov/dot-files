@@ -15,7 +15,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themese'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'lervag/vimtex'
+Plugin 'Syntastic'
+" Plugin 'scrooloose/nerdtree'
+Plugin 'The-NERD-tree'
+Plugin 'Tagbar'
 
 call vundle#end()
 
@@ -43,9 +48,18 @@ set mouse=a
 
 " --- Plugin Specific Settings ---
 
+" --- nerdtree Settings ---
+
+let NERDTreeDirArrows=0
+nnoremap <localleader>f :NERDTreeToggle<return>
+
+" ---  tagbar Settings ---
+
+nnoremap <localleader>F :TagbarOpen<return>
+
 " --- altercation/vim-colors-solarized settings ---
 
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
@@ -65,26 +79,40 @@ let g:airline_theme='solarized'
 
 set noesckeys
 let maplocalleader = "-"
+" edit the this thing from anywhr
 nnoremap <localleader>re :vsplit $MYVIMRC<cr>
 nnoremap <localleader>rs :source $MYVIMRC<cr>
 abbrev @@ michael.belousov98@gmail.com
 abbrev (203) (203) 502-9425
+" elite mode babi
 noremap <left> <nop>
 noremap <right> <nop>
 noremap <down> <nop>
 noremap <up> <nop>
-inoremap <c-j> <esc>
-inoremap <s-BS> <del>
+" inoremap <c-j> <esc>
+" inoremap <s-BS> <del>
+" rearranging
 nnoremap <c-j> ddp
 nnoremap <c-k> ddkP
 nnoremap <c-l> xp
 nnoremap <c-h> xhhp
+" big boy jumps
+nnoremap J 20j
+nnoremap K 20k
+nnoremap L 20l
+nnoremap H 20h
+" help key
+nnoremap <localleader>h K
 nnoremap <localleader>a ea
+" alternate buffer
 nnoremap <localleader>B <c-^>
+" alternate buffer location
 nnoremap <localleader>b ``
+" override readonly
 nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
 set timeoutlen=1000
 
+" this needs some more fun
 augroup pythonfiles
   autocmd!
   autocmd FileType python nnoremap <buffer> <localleader>c I# <esc>

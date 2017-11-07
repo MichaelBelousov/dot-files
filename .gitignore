@@ -1,13 +1,10 @@
-# this is potentially a huge security liability and I will increase my github security to compensate 
-# it would however require some stupidity on my part to actually push confidential data (it would be very much delayed
 *
 !.gitignore
 !.vimrc
-# from stack overflow 5261959, why it works I don't know
 !.vim/
-!.vim/*
-!.vim/**/*
+.vim/vundle/
 !.tmux.conf
 !.bashrc
 !.minttyrc
 !.ssh/config
+
