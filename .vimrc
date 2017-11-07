@@ -8,6 +8,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/vundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " ---  Making Vim look good ---
@@ -18,9 +19,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lervag/vimtex'
 Plugin 'Syntastic'
-" Plugin 'scrooloose/nerdtree'
 Plugin 'The-NERD-tree'
 Plugin 'Tagbar'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
