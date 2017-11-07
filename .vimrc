@@ -30,6 +30,18 @@ set shiftwidth=2
 set expandtab
 set st=2 sts=2
 
+function! ResetTabs(count)
+  execute "set tabstop=" . a:count
+  execute "set shiftwidth=" . a:count
+  execute "set st=" . a:count
+  execute "set sts=" . a:count
+  set expandtab
+endfunction
+nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
+
+" nnoremap <localleader>I :<C-U>set tabstop=v:count shiftwidth=v:count st=v:count sts=v:count
+
+
 " --- End Vundle ---
 
 " --- General Settings ---
@@ -99,8 +111,6 @@ nnoremap <c-h> xhhp
 " big boy jumps
 nnoremap J 20j
 nnoremap K 20k
-nnoremap L 20l
-nnoremap H 20h
 " help key
 nnoremap <localleader>h K
 nnoremap <localleader>a ea

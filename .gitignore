@@ -3,6 +3,7 @@
 !.vimrc
 !.vim/
 .vim/vundle/
+.vim/.netrwhist
 !.tmux.conf
 !.bashrc
 !.minttyrc
