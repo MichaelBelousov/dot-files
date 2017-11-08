@@ -5,6 +5,8 @@ set nocompatible
 
 filetype off
 
+set encoding=utf-8
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -61,6 +63,8 @@ set mouse=a
 
 " --- Plugin Specific Settings ---
 
+let maplocalleader = "-"
+
 " --- nerdtree Settings ---
 
 let NERDTreeDirArrows=0
@@ -81,17 +85,13 @@ colorscheme solarized
 set laststatus=2
 
 let g:airline_powerline_fonts=1
-
 let g:airline_detect_paste=1
-
 let g:airline#extensions#tabline#enabled=1
-
 let g:airline_theme='solarized'
 
 " --- Mike Stuff
 
 set noesckeys
-let maplocalleader = "-"
 " edit the this thing from anywhr
 nnoremap <localleader>re :vsplit $MYVIMRC<cr>
 nnoremap <localleader>rs :source $MYVIMRC<cr>
