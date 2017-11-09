@@ -34,11 +34,12 @@ set expandtab
 set st=2 sts=2
 
 function! ResetTabs(count)
-  execute "set tabstop=" . a:count
+  execute "set softtabstop=0"
+  execute "set expandtab"
+  execute "set smarttab"
   execute "set shiftwidth=" . a:count
-  execute "set st=" . a:count
-  execute "set sts=" . a:count
-  set expandtab
+  execute "normal gg=G"
+  execute "retab"
 endfunction
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 
