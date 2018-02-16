@@ -24,14 +24,15 @@ Plugin 'Syntastic'
 Plugin 'The-NERD-tree'
 Plugin 'Tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'chaoren/vim-wordmotion'
 
 call vundle#end()
 
 filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set st=2 sts=2
+set st=4 sts=4
 
 function! ResetTabs(count)
   execute "set softtabstop=0"
@@ -113,6 +114,7 @@ nnoremap <c-h> xhhp
 " big boy jumps
 nnoremap J 20j
 nnoremap K 20k
+
 " help key
 nnoremap <localleader>h K
 nnoremap <localleader>a ea
