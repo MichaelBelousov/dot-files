@@ -26,10 +26,10 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set st=2 sts=2
+set st=4 sts=4
 
 function! ResetTabs(count)
   execute "set tabstop=" . a:count
@@ -39,6 +39,7 @@ function! ResetTabs(count)
   set expandtab
 endfunction
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
+
 
 " nnoremap <localleader>I :<C-U>set tabstop=v:count shiftwidth=v:count st=v:count sts=v:count
 
@@ -60,6 +61,8 @@ syntax on
 set mouse=a
 
 " --- Plugin Specific Settings ---
+
+let maplocalleader = "-"
 
 " --- nerdtree Settings ---
 
@@ -88,10 +91,15 @@ let g:airline#extensions#tabline#enabled=1
 
 let g:airline_theme='solarized'
 
+" --- Syntastic Settings ---
+
+let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
+nnoremap <localleader>ss :SyntasticCheck<cr>
+nnoremap <localleader>sr :SyntasticReset<cr>
+
 " --- Mike Stuff
 
 set noesckeys
-let maplocalleader = "-"
 " edit the this thing from anywhr
 nnoremap <localleader>re :vsplit $MYVIMRC<cr>
 nnoremap <localleader>rs :source $MYVIMRC<cr>
