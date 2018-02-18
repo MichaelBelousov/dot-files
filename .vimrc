@@ -5,6 +5,8 @@ set nocompatible
 
 filetype off
 
+set encoding=utf-8
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -22,6 +24,7 @@ Plugin 'Syntastic'
 Plugin 'The-NERD-tree'
 Plugin 'Tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'chaoren/vim-wordmotion'
 
 call vundle#end()
 
@@ -32,11 +35,12 @@ set expandtab
 set st=4 sts=4
 
 function! ResetTabs(count)
-  execute "set tabstop=" . a:count
+  execute "set softtabstop=0"
+  execute "set expandtab"
+  execute "set smarttab"
   execute "set shiftwidth=" . a:count
-  execute "set st=" . a:count
-  execute "set sts=" . a:count
-  set expandtab
+  execute "normal gg=G"
+  execute "retab"
 endfunction
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 
@@ -84,11 +88,8 @@ colorscheme solarized
 set laststatus=2
 
 let g:airline_powerline_fonts=1
-
 let g:airline_detect_paste=1
-
 let g:airline#extensions#tabline#enabled=1
-
 let g:airline_theme='solarized'
 
 " --- Syntastic Settings ---
@@ -117,9 +118,14 @@ nnoremap <c-j> ddp
 nnoremap <c-k> ddkP
 nnoremap <c-l> xp
 nnoremap <c-h> xhhp
+"
 " big boy jumps
 nnoremap J 20j
 nnoremap K 20k
+"
+" clear search
+nnoremap <localleader>/ :nohlsearch<cr>
+
 " help key
 nnoremap <localleader>h K
 nnoremap <localleader>a ea
