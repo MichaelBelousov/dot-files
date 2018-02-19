@@ -8,4 +8,5 @@
 !.bashrc
 !.minttyrc
 !.ssh/config
+!.dotsetup.sh
 
