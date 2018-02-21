@@ -44,6 +44,7 @@ function! ResetTabs(count)
   execute "set tabstop=" . a:count
   execute "normal gg=G"
   execute "retab"
+  execute "normal ``"
 endfunction
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 
