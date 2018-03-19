@@ -29,10 +29,10 @@ Plugin 'chaoren/vim-wordmotion'
 call vundle#end()
 
 filetype plugin indent on
-" set tabstop=4
-" set shiftwidth=4
-" set expandtab
-" set st=4 sts=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set st=4 sts=4
 
 function! ResetTabs(count)
   execute "set softtabstop=0"
