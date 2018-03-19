@@ -48,6 +48,21 @@ function! ResetTabs(count)
 endfunction
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 
+set softtabstop=0
+set expandtab
+set smarttab
+set shiftwidth=4
+set st=4
+set sts=4
+set tabstop=4
+
+" set tabstop=4
+" set shiftwidth=4
+" set expandtab
+" set st=4 sts=4
+" literal set tabs
+
+
 
 " nnoremap <localleader>I :<C-U>set tabstop=v:count shiftwidth=v:count st=v:count sts=v:count
 
@@ -59,7 +74,7 @@ nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 " set visualbell
 set backspace=indent,eol,start
 set ruler
-set number
+set nonumber
 set showcmd
 set incsearch
 set hlsearch
@@ -140,6 +155,10 @@ nnoremap <localleader>b ``
 " override readonly
 nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
 set timeoutlen=1000
+
+" add space around char
+" should be  replaced with 's'
+nnoremap <localleader><space> i <esc>la <esc>
 
 " this needs some more fun
 augroup pythonfiles
