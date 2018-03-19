@@ -70,7 +70,7 @@ set tabstop=4
 " set visualbell
 set backspace=indent,eol,start
 set ruler
-set number
+set nonumber
 set showcmd
 set incsearch
 set hlsearch
@@ -151,6 +151,10 @@ nnoremap <localleader>b ``
 " override readonly
 nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
 set timeoutlen=1000
+
+" add space around char
+" should be  replaced with 's'
+nnoremap <localleader><space> i <esc>la <esc>
 
 " this needs some more fun
 augroup pythonfiles
