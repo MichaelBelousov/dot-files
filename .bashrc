@@ -116,9 +116,20 @@ fi
 # silly colors added
 export TERM="screen-256color" # -bce
 export PROMPT_COMMAND=''
-export PYTHONSTARTUP=$HOME/.pythonrc
+# export PYTHONSTARTUP=$HOME/.pythonrc
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# multiple shell history
+export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# end multiple shell history
+
+# aliases
+alias getclip='xclip -selection c -o'
+alias putclip='xclip -selection c -i'
+#
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/mike/.sdkman"
 [[ -s "/home/mike/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mike/.sdkman/bin/sdkman-init.sh"
 
