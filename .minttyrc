@@ -1,5 +1,6 @@
 BoldAsFont=-1
-Font=Ubuntu Mono derivative Powerlin
+Font=Source Code Pro
+BellType=0
 FontHeight=12
 Transparency=low
 ThemeFile=rosipov

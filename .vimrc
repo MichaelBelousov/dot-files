@@ -164,6 +164,8 @@ nnoremap <localleader>/ :nohlsearch<cr>
 " TODO: make applicable without macros
 " visual mode perline macro 
 vnoremap <localleader>@ :'<,'>normal @
+" open terminal
+nnoremap <localleader>t :terminal<cr>
 
 " help key
 nnoremap <localleader>h K
@@ -205,4 +207,10 @@ augroup filespecifics
   " need to know literal \" before enabling these
   " autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
   " autocmd FileType vim nnoremap <buffer> <localleader>C A  " <esc>
+augroup END
+
+" need to fix this, to kill terminal on exit
+augroup terminal
+    autocmd!
+    " autocmd TermClose * if getline('$') == 'exit' | close | endif
 augroup END
