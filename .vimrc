@@ -25,6 +25,8 @@ Plugin 'The-NERD-tree'
 Plugin 'Tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chaoren/vim-wordmotion'
+Plugin 'eregex.vim'
+Plugin 'mu-template'
 
 call vundle#end()
 
@@ -86,6 +88,15 @@ set mouse=a
 " --- Plugin Specific Settings ---
 
 let maplocalleader = "-"
+
+" --- Vundle.vim ---
+
+nnoremap <localleader>ps :PluginSearch<space>
+nnoremap <localleader>pu :PluginUpdate<return>
+
+" --- eregex.vim ---
+
+let g:eregex_default_enable = 1
 
 " --- nerdtree Settings ---
 
