@@ -37,6 +37,7 @@ set expandtab
 set st=4 sts=4
 
 function! ResetTabs(count)
+  filetype plugin indent on
   execute "set softtabstop=0"
   execute "set expandtab"
   execute "set smarttab"
@@ -158,6 +159,10 @@ nnoremap K 20k
 "
 " clear search
 nnoremap <localleader>/ :nohlsearch<cr>
+
+" TODO: make applicable without macros
+" visual mode perline macro 
+vnoremap <localleader>@ :'<,'>normal @
 
 " help key
 nnoremap <localleader>h K
