@@ -29,6 +29,10 @@ Plugin 'chaoren/vim-wordmotion'
 call vundle#end()
 
 filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set st=4 sts=4
 
 function! ResetTabs(count)
   execute "set softtabstop=0"
@@ -154,6 +158,10 @@ nnoremap <localleader>b ``
 " override readonly
 nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
 set timeoutlen=1000
+
+" add space around char
+" should be  replaced with 's'
+nnoremap <localleader><space> i <esc>la <esc>
 
 " this needs some more fun
 augroup pythonfiles
