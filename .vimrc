@@ -125,6 +125,9 @@ let g:airline_theme='solarized'
 " --- Syntastic Settings ---
 
 let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 nnoremap <localleader>ss :SyntasticCheck<cr>
 nnoremap <localleader>sr :SyntasticReset<cr>
 
