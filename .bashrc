@@ -127,6 +127,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # aliases
 alias getclip='xclip -selection c -o'
 alias putclip='xclip -selection c -i'
+alias g='git'
 #
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
