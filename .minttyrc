@@ -1,8 +1,4 @@
 BoldAsFont=-1
-Transparency=medium
-OpaqueWhenFocused=yes
-Font=Menlo for Powerline
-Term=xterm-256color
-Columns=100
-Rows=36
-BellType=0
+Font=Ubuntu Mono derivative Powerlin
+FontHeight=12
+Transparency=low
