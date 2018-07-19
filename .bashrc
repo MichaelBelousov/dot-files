@@ -57,20 +57,32 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w\n$ '
 else
+    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w\n$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w\n$ '
     ;;
 *)
     ;;
 esac
+
+###### fancy bash git prompt
+
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+
+######
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -119,19 +131,21 @@ export PROMPT_COMMAND=''
 # export PYTHONSTARTUP=$HOME/.pythonrc
 
 # multiple shell history
-export HISTCONTROL=ignoredups:erasedups
-shopt -s histappend
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# export HISTCONTROL=ignoredups:erasedups
+# shopt -s histappend
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # end multiple shell history
 
-# aliases
-alias getclip='xclip -selection c -o'
-alias putclip='xclip -selection c -i'
+
+######### aliases
+
 alias g='git'
-#
 
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/mike/.sdkman"
-[[ -s "/home/mike/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mike/.sdkman/bin/sdkman-init.sh"
-
+if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
+    alias getclip='cat /dev/clipboard'
+    alias putclip='tee /dev/clipboard'
+else
+    alias getclip='xclip -selection c -o'
+    alias putclip='xclip -selection c -i'
+fi
 
