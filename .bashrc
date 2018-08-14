@@ -140,6 +140,8 @@ export PROMPT_COMMAND=''
 
 git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 
+#TODO add a command for getting changed files in the order of listing from git status, for selection usage
+
 ######### aliases
 
 alias g='git'
