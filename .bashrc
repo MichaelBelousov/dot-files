@@ -136,6 +136,9 @@ export PROMPT_COMMAND=''
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # end multiple shell history
 
+######### git settings
+
+git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 
 ######### aliases
 
