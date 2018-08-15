@@ -153,11 +153,11 @@ nnoremap <c-j> ddp
 nnoremap <c-k> ddkP
 nnoremap <c-l> xp
 nnoremap <c-h> xhhp
-"
 " big boy jumps
 nnoremap J 20j
 nnoremap K 20k
-"
+" open terminal
+nnoremap <localleader>t :terminal<cr>
 " clear search
 nnoremap <localleader>/ :nohlsearch<cr>
 
