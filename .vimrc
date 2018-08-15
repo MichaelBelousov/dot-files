@@ -93,7 +93,7 @@ let maplocalleader = "-"
 " --- Vundle.vim ---
 
 nnoremap <localleader>ps :PluginSearch<space>
-nnoremap <localleader>pu :PluginUpdate<return>
+nnoremap <localleader>pu :PluginUpdate<cr>
 
 " --- eregex.vim ---
 
@@ -102,11 +102,11 @@ let g:eregex_default_enable = 1
 " --- nerdtree Settings ---
 
 let NERDTreeDirArrows=0
-nnoremap <localleader>f :NERDTreeToggle<return>
+nnoremap <localleader>f :NERDTreeToggle<cr>
 
 " ---  tagbar Settings ---
 
-nnoremap <localleader>F :TagbarOpen<return>
+nnoremap <localleader>F :TagbarOpen<cr>
 
 " --- altercation/vim-colors-solarized settings ---
 
@@ -172,7 +172,7 @@ nnoremap <localleader>B <c-^>
 " alternate buffer location
 nnoremap <localleader>b ``
 " override readonly
-nnoremap <localleader>W :w !sudo tee % > /dev/null<return>
+nnoremap <localleader>W :w !sudo tee % > /dev/null<cr>
 set timeoutlen=1000
 
 " add space around char
