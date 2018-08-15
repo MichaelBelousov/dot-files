@@ -140,6 +140,10 @@ export PROMPT_COMMAND=''
 
 git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 git config --global alias.stat "status"
+git config --global user.email "michael.belousov98@gmail.com"
+git config --global user.name "Michael Belousov"
+git config --global core.editor "vim"
+git config --global core.autocrlf "true"
 
 # utility for grepping a git status
 alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
