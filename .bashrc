@@ -58,20 +58,18 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w\n$ '
 else
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w\n$ '
+    PS1='\[\033]0;:/home/Mike\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]\[\033[0m\]\n$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w\n$ '
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1='\[\033]0;:/home/Mike\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]\[\033[0m\]\n$ '
     ;;
 *)
     ;;
@@ -79,8 +77,8 @@ esac
 
 ###### fancy bash git prompt
 
-GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
+# GIT_PROMPT_ONLY_IN_REPO=1
+# source ~/.bash-git-prompt/gitprompt.sh
 
 ######
 
@@ -147,8 +145,6 @@ git config --global core.autocrlf "true"
 
 # utility for grepping a git status
 alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
-
-#TODO add a command for getting changed files in the order of listing from git status, for selection usage
 
 ######### aliases
 
