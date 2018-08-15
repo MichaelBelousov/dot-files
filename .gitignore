@@ -9,4 +9,5 @@
 !.minttyrc
 !.ssh/config
 !.dotsetup.sh
-
+!.scripts/
+!.scripts/*
