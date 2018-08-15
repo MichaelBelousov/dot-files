@@ -126,7 +126,7 @@ let g:airline_theme='solarized'
 " --- Syntastic Settings ---
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
-let g:syntastic_python_checkers = ['pylint', 'pep8']
+let g:syntastic_python_checkers = ['python', 'pylint', 'pep8']
 let g:syntastic_cpp_checkers = ['clang']
 let g:syntastic_cpp_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
