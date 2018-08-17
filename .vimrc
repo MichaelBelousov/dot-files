@@ -157,15 +157,17 @@ nnoremap <c-h> xhhp
 nnoremap J 20j
 nnoremap K 20k
 " open terminal
-nnoremap <localleader>t :terminal<cr>
+nnoremap <localleader>t :terminal ++curwin<cr>
 " clear search
 nnoremap <localleader>/ :nohlsearch<cr>
 
 " TODO: make applicable without macros
 " visual mode perline macro 
 vnoremap <localleader>@ :'<,'>normal @
-" open terminal
+
+" terminal commands
 nnoremap <localleader>t :terminal<cr>
+tnoremap <esc> <C-W>N
 
 " help key
 nnoremap <localleader>h K
