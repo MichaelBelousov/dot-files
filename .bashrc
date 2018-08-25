@@ -150,7 +150,8 @@ alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
 
 alias g='git'
 
-if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
+#TODO: use a startswith() function to abstract these tests
+if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ] || [ "$(expr substr $(uname -s) 1 4)" == "MSYS" ]; then
     alias getclip='cat /dev/clipboard'
     alias putclip='tee /dev/clipboard'
 else
