@@ -158,7 +158,7 @@ nnoremap K 20k
 " open terminal
 nnoremap <localleader>t :terminal ++curwin<cr>
 " clear search
-nnoremap <localleader>/ :nohlsearch<cr>
+nnoremap <localleader>/ :nohl<cr>
 
 " TODO: make applicable without macros
 " visual mode perline macro 
