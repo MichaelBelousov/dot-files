@@ -1,4 +1,5 @@
 "
+
 set nocompatible
 
 " --- Vundle ---
@@ -13,7 +14,7 @@ call vundle#begin()
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/vundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
-" ---  Making Vim look good ---
+" ---  Plugins ---
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
@@ -64,8 +65,6 @@ set tabstop=4
 " set expandtab
 " set st=4 sts=4
 " literal set tabs
-
-
 
 " nnoremap <localleader>I :<C-U>set tabstop=v:count shiftwidth=v:count st=v:count sts=v:count
 
@@ -165,6 +164,8 @@ nnoremap <localleader>/ :nohlsearch<cr>
 " visual mode perline macro 
 vnoremap <localleader>@ :'<,'>normal @
 
+vnoremap <localleader>c :'<,'>normal <localleader>c<cr>
+
 " terminal commands
 nnoremap <localleader>t :terminal<cr>
 tnoremap <esc> <C-W>N
@@ -178,7 +179,10 @@ nnoremap <localleader>B <c-^>
 nnoremap <localleader>b ``
 " override readonly
 nnoremap <localleader>W :w !sudo tee % > /dev/null<cr>
+
+" timeout length 
 set timeoutlen=1000
+set ttimeoutlen=1000
 
 " add space around char
 " should be  replaced with 's'
@@ -216,3 +220,4 @@ augroup terminal
     autocmd!
     " autocmd TermClose * if getline('$') == 'exit' | close | endif
 augroup END
+
