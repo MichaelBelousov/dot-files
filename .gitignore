@@ -4,6 +4,8 @@
 !.vim/
 .vim/vundle/
 .vim/.netrwhist
+!.vim/filetypes/
+!.vim/filetypes/*
 !.tmux.conf
 !.bashrc
 !.minttyrc

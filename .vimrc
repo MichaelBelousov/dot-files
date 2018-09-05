@@ -38,17 +38,17 @@ set expandtab
 set st=4 sts=4
 
 function! ResetTabs(count)
-  filetype plugin indent on
-  execute "set softtabstop=0"
-  execute "set expandtab"
-  execute "set smarttab"
-  execute "set shiftwidth=" . a:count
-  execute "set st=" . a:count
-  execute "set sts=" . a:count
-  execute "set tabstop=" . a:count
-  execute "normal gg=G"
-  execute "retab"
-  execute "normal ``"
+    filetype plugin indent on
+    execute "set softtabstop=0"
+    execute "set expandtab"
+    execute "set smarttab"
+    execute "set shiftwidth=" . a:count
+    execute "set st=" . a:count
+    execute "set sts=" . a:count
+    execute "set tabstop=" . a:count
+    execute "normal gg=G"
+    execute "retab"
+    execute "normal ``"
 endfunction
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 
@@ -190,11 +190,11 @@ nnoremap <localleader><space> i <esc>la <esc>
 
 " this needs some more fun
 augroup pythonfiles
-  autocmd!
-  autocmd FileType python nnoremap <buffer> <localleader>c I# <esc>
-  autocmd FileType python nnoremap <buffer> <localleader>C A  # 
-  " autocmd FileType python abbrev <buffer> for for :<left>
-  " autocmd FileType python abbrev <buffer> if if :<left>
+    autocmd!
+    autocmd FileType python nnoremap <buffer> <localleader>c I# <esc>
+    autocmd FileType python nnoremap <buffer> <localleader>C A  # 
+    " autocmd FileType python abbrev <buffer> for for :<left>
+    " autocmd FileType python abbrev <buffer> if if :<left>
 augroup END
 
 augroup javaIGuess
@@ -202,17 +202,22 @@ augroup javaIGuess
     autocmd FileType java set sts=2 st=2
 augroup END
 
+augroup mike_cpp
+    autocmd!
+    source $HOME/.vim/filetypes/cpp.vim
+augroup END
+
 augroup filespecifics
-  autocmd!
-  autocmd FileType c nnoremap <buffer> <localleader>c I// <esc>
-  autocmd FileType c nnoremap <buffer> <localleader>C A  // 
-  autocmd FileType cpp nnoremap <buffer> <localleader>c I// <esc>
-  autocmd FileType cpp nnoremap <buffer> <localleader>C A  // 
-  autocmd FileType javascript nnoremap <buffer> <localleader>c I// <esc>
-  autocmd FileType javascript nnoremap <buffer> <localleader>C A  // 
-  " need to know literal \" before enabling these
-  " autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
-  " autocmd FileType vim nnoremap <buffer> <localleader>C A  " <esc>
+    autocmd!
+    autocmd FileType c nnoremap <buffer> <localleader>c I// <esc>
+    autocmd FileType c nnoremap <buffer> <localleader>C A  // 
+    autocmd FileType cpp nnoremap <buffer> <localleader>c I// <esc>
+    autocmd FileType cpp nnoremap <buffer> <localleader>C A  // 
+    autocmd FileType javascript nnoremap <buffer> <localleader>c I// <esc>
+    autocmd FileType javascript nnoremap <buffer> <localleader>C A  // 
+    " need to know literal \" before enabling these
+    " autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
+    " autocmd FileType vim nnoremap <buffer> <localleader>C A  " <esc>
 augroup END
 
 " need to fix this, to kill terminal on exit
