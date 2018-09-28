@@ -204,7 +204,7 @@ augroup END
 
 augroup mike_cpp
     autocmd!
-    source $HOME/.vim/filetypes/cpp.vim
+    autocmd FileType cpp source $HOME/.vim/filetypes/cpp.vim
 augroup END
 
 augroup filespecifics
