@@ -153,8 +153,8 @@ nnoremap <c-k> ddkP
 nnoremap <c-l> xp
 nnoremap <c-h> xhhp
 " big boy jumps
-nnoremap J 20j
-nnoremap K 20k
+nnoremap J <c-d>
+nnoremap K <c-u>
 " open terminal
 nnoremap <localleader>t :terminal ++curwin<cr>
 " clear search
