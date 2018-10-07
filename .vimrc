@@ -188,6 +188,7 @@ set ttimeoutlen=1000
 " add space around char
 " should be  replaced with 's'
 nnoremap <localleader><space> i <esc>la <esc>
+nnoremap <localleader><cr> O<esc>jo<esc>k
 
 " this needs some more fun
 augroup pythonfiles
