@@ -149,6 +149,7 @@ alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
 ######### aliases
 
 alias g='git'
+alias s='sudo'
 
 #TODO: use a startswith() function to abstract these tests
 if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ] || [ "$(expr substr $(uname -s) 1 4)" == "MSYS" ]; then
@@ -159,3 +160,4 @@ else
     alias putclip='xclip -selection c -i'
 fi
 
+export PATH=$PATH:/data/data/com.termux/files/home/RE-flex/bin
