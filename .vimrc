@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'chaoren/vim-wordmotion'
 Plugin 'eregex.vim'
 Plugin 'mu-template'
+Plugin 'surround.vim'
 
 call vundle#end()
 
