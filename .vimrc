@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'chaoren/vim-wordmotion'
 Plugin 'eregex.vim'
 Plugin 'mu-template'
+Plugin 'surround.vim'
 
 call vundle#end()
 
@@ -83,7 +84,7 @@ set hlsearch
 
 syntax on
 
-set mouse=a
+set mouse-=a
 
 " --- Plugin Specific Settings ---
 
@@ -153,12 +154,12 @@ nnoremap <c-k> ddkP
 nnoremap <c-l> xp
 nnoremap <c-h> xhhp
 " big boy jumps
-nnoremap J 20j
-nnoremap K 20k
+nnoremap J <c-d>
+nnoremap K <c-u>
 " open terminal
 nnoremap <localleader>t :terminal ++curwin<cr>
 " clear search
-nnoremap <localleader>/ :nohlsearch<cr>
+nnoremap <localleader>/ :nohl<cr>
 
 " TODO: make applicable without macros
 " visual mode perline macro 
@@ -187,6 +188,7 @@ set ttimeoutlen=1000
 " add space around char
 " should be  replaced with 's'
 nnoremap <localleader><space> i <esc>la <esc>
+nnoremap <localleader><cr> O<esc>jo<esc>k
 
 " this needs some more fun
 augroup pythonfiles
@@ -204,7 +206,7 @@ augroup END
 
 augroup mike_cpp
     autocmd!
-    source $HOME/.vim/filetypes/cpp.vim
+    autocmd FileType cpp source $HOME/.vim/filetypes/cpp.vim
 augroup END
 
 augroup filespecifics
