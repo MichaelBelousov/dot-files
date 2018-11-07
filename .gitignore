@@ -13,3 +13,4 @@
 !.dotsetup.sh
 !.scripts/
 !.scripts/*
+!.gitsetup.sh
