@@ -82,6 +82,11 @@ esac
 
 ######
 
+# thanks archlinux/tmux
+# TODO: have a global session to be attached to on login
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -124,8 +129,11 @@ if ! shopt -oq posix; then
 fi
 
 # silly colors added
-export TERM="screen-256color" # -bce
+export TERM="xterm-256color" # -bce
 export PROMPT_COMMAND=''
+
+
+
 # export PYTHONSTARTUP=$HOME/.pythonrc
 
 # multiple shell history
@@ -134,14 +142,6 @@ export PROMPT_COMMAND=''
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # end multiple shell history
 
-######### git settings
-
-git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
-git config --global alias.stat "status"
-git config --global user.email "michael.belousov98@gmail.com"
-git config --global user.name "Michael Belousov"
-git config --global core.editor "vim"
-git config --global core.autocrlf "true"
 
 # utility for grepping a git status
 alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
@@ -151,7 +151,9 @@ alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
 alias g='git'
 alias s='sudo'
 
-#TODO: use a startswith() function to abstract these tests
+# NOTE: if windows specific config gets too big, move to separate file and source
+
+# TODO: use a startswith() function to abstract these tests
 if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ] || [ "$(expr substr $(uname -s) 1 4)" == "MSYS" ]; then
     alias getclip='cat /dev/clipboard'
     alias putclip='tee /dev/clipboard'
