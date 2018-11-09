@@ -139,10 +139,15 @@ nnoremap <localleader>sr :SyntasticReset<cr>
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
+inoremap <silent> <c-w>h <esc>:TmuxNavigateLeft<cr>
 nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
+inoremap <silent> <c-w>j <esc>:TmuxNavigateDown<cr>
 nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
+inoremap <silent> <c-w>k <esc>:TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
+inoremap <silent> <c-w>l <esc>:TmuxNavigateRight<cr>
 nnoremap <silent> <c-w>\ :TmuxNavigatePrevious<cr>
+inoremap <silent> <c-w>\ <esc>:TmuxNavigatePrevious<cr>
 
 " --- Mike Stuff ---
 
