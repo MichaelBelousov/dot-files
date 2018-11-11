@@ -244,3 +244,8 @@ augroup terminal
     " autocmd TermClose * if getline('$') == 'exit' | close | endif
 augroup END
 
+augroup pytex
+    autocmd!
+    au BufRead,BufNewFile *.pytex set filetype=tex
+augroup END
+
