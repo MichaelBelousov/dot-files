@@ -85,9 +85,9 @@ esac
 ######
 
 
-# thanks archlinux/tmux
+# thanks @archlinux/tmux
 # TODO: have a global session to be attached to on login
-if [ command -v tmux ]; then
+if hash tmux 2>/dev/null; then
     [[ $- != *i* ]] && return
     [[ -z "$TMUX" ]] && exec tmux
 fi
