@@ -82,12 +82,19 @@ esac
 
 ######
 
+######
+
+
 # thanks archlinux/tmux
 # TODO: have a global session to be attached to on login
 if [ command -v tmux ]; then
     [[ $- != *i* ]] && return
     [[ -z "$TMUX" ]] && exec tmux
 fi
+
+# don't next tmux over ssh
+
+alias ssh='ssh -o SendEnv=TMUX'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
