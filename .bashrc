@@ -160,6 +160,12 @@ alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
 alias g='git'
 alias s='sudo'
 
+######### functions
+
+function calc {
+    python3 -c "print($*)"
+}
+
 # NOTE: if windows specific config gets too big, move to separate file and source
 
 # TODO: use a startswith() function to abstract these tests
