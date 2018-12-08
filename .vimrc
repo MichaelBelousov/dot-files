@@ -189,6 +189,7 @@ tnoremap <esc> <C-W>N
 
 " help key
 nnoremap <localleader>h K
+vnoremap <localleader>h K
 nnoremap <localleader>a ea
 " alternate buffer
 nnoremap <localleader>B <c-^>
