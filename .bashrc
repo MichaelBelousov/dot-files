@@ -89,11 +89,14 @@ esac
 # TODO: have a global session to be attached to on login
 if hash tmux 2>/dev/null; then
     [[ $- != *i* ]] && return
-    [[ -z "$TMUX" ]] && exec tmux
+    if [[ -z "$TMUX" ]]; then 
+        # if no tmux session detected, start tmux
+        exec tmux
+        # TODO: unset the tmux variable on startup shell
+    fi
 fi
 
 # don't next tmux over ssh
-
 alias ssh='ssh -o SendEnv=TMUX'
 
 # enable color support of ls and also add handy aliases
@@ -152,13 +155,15 @@ export PROMPT_COMMAND=''
 # end multiple shell history
 
 
-# utility for grepping a git status
-alias gstatgrep='g status --porcelain | cut -b 1-3 --complement | grep'
+# utility for grepping git status output
+alias gsg='g status --porcelain | cut -b 1-3 --complement | grep'
 
 ######### aliases
 
 alias g='git'
 alias s='sudo'
+
+######## Per-Platform Config?
 
 # NOTE: if windows specific config gets too big, move to separate file and source
 
@@ -171,4 +176,5 @@ else
     alias putclip='xclip -selection c -i'
 fi
 
+# TODO: only if termux commands exist!
 export PATH=$PATH:/data/data/com.termux/files/home/RE-flex/bin

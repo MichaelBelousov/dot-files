@@ -198,6 +198,10 @@ nnoremap <localleader>b ``
 " override readonly
 nnoremap <localleader>W :w !sudo tee % > /dev/null<cr>
 
+" add new operator pending mapping for pasting into
+" separators/delinators (e.g. replace quote contents)
+" nnoremap <localleader>p 
+
 " timeout length 
 set timeoutlen=1000
 set ttimeoutlen=1000
