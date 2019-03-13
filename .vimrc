@@ -87,6 +87,11 @@ syntax on
 
 set mouse-=a
 
+" diffs writeable by default
+if &diff
+    set noreadonly
+endif
+
 " --- Plugin Specific Settings ---
 
 let maplocalleader = "-"
