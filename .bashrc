@@ -172,9 +172,12 @@ function calc {
 if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ] || [ "$(expr substr $(uname -s) 1 4)" == "MSYS" ]; then
     alias getclip='cat /dev/clipboard'
     alias putclip='tee /dev/clipboard'
+    # use winpty to correctly use interactive windows tools from mintty
+    alias python3='winpty /d/programs/Python/Python36-32/python'
+    alias prolog='winpty /d/programs/swipl/bin'
+    # add inkscape to path on windows for me
 else
     alias getclip='xclip -selection c -o'
     alias putclip='xclip -selection c -i'
 fi
 
-export PATH=$PATH:/data/data/com.termux/files/home/RE-flex/bin
