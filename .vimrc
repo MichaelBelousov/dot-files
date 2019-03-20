@@ -87,6 +87,11 @@ syntax on
 
 set mouse-=a
 
+" diffs writeable by default
+if &diff
+    set noreadonly
+endif
+
 " --- Plugin Specific Settings ---
 
 let maplocalleader = "-"
@@ -197,6 +202,10 @@ nnoremap <localleader>B <c-^>
 nnoremap <localleader>b ``
 " override readonly
 nnoremap <localleader>W :w !sudo tee % > /dev/null<cr>
+
+" add new operator pending mapping for pasting into
+" separators/delinators (e.g. replace quote contents)
+" nnoremap <localleader>p 
 
 " timeout length 
 set timeoutlen=1000
