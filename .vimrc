@@ -30,6 +30,7 @@ Plugin 'eregex.vim'
 Plugin 'mu-template'
 Plugin 'surround.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ElmCast/elm-vim'
 
 call vundle#end()
 
@@ -134,9 +135,9 @@ let g:airline_theme='solarized'
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
 " TODO: move to language specifically sources files
 let g:syntastic_python_checkers = ['python', 'pylint', 'pep8']
-let g:syntastic_cpp_checkers = ['clang']
-let g:syntastic_cpp_compiler = 'clang'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+let g:syntastic_cpp_checkers = ['c++']
+let g:syntastic_cpp_compiler = 'c++'
+let g:syntastic_cpp_compiler_options = '--std=c++17'
 nnoremap <localleader>ss :SyntasticCheck<cr>
 nnoremap <localleader>sr :SyntasticReset<cr>
 

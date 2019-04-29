@@ -168,9 +168,15 @@ alias s='sudo'
 function calc {
     python3 -c "print($*)"
 }
+
+function sys_name {
+    return $(uname -s)
+}
+
 ######## Per-Platform Config?
 
 # NOTE: if windows specific config gets too big, move to separate file and source
+# NOTE: add machine-specific rc file
 
 # TODO: use a startswith() function to abstract these tests
 if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ] || [ "$(expr substr $(uname -s) 1 4)" == "MSYS" ]; then
