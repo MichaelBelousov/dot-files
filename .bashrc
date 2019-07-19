@@ -141,7 +141,7 @@ if ! shopt -oq posix; then
 fi
 
 # silly colors added
-export TERM="xterm-256color" # -bce
+# export TERM="xterm-256color" # -bce
 export PROMPT_COMMAND=''
 
 
@@ -158,7 +158,7 @@ export PROMPT_COMMAND=''
 # utility for grepping git status output
 alias gsg='g status --porcelain | cut -b 1-3 --complement | grep'
 # utility for grepping git branch output
-alias gbg='g branch --porcelain | cut -b 1-2 --complement | grep'
+alias gbg='g branch | cut -b 1-2 --complement | grep'
 # use these like so:
 # g checkout $(gbg keyword); g add $(gsg file-keyword)
 
