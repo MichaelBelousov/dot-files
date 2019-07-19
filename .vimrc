@@ -31,6 +31,7 @@ Plugin 'mu-template'
 Plugin 'surround.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ElmCast/elm-vim'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
@@ -120,6 +121,9 @@ nnoremap <localleader>F :TagbarOpen<cr>
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+set t_Co=256
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 " --- bling/vim-airline settings ---
 
