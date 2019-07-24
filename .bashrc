@@ -56,6 +56,14 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+display_time() {
+    date -Ins
+}
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w\n$ '
@@ -74,6 +82,8 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+export PS1="\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[35m\]$(parse_git_branch)\[\033[36m\] $(display_time)\n\[\033[00m\]\$ "
 
 ###### fancy bash git prompt
 
