@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 display_time() {
-    date -Ins
+    date --rfc-3339=ns | cut -b1-11 --complement
 }
 
 parse_git_branch() {
