@@ -66,10 +66,10 @@ parse_git_branch() {
 
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w \$(parse_git_branch)\[\033[00m\] \n$ '
+    PS1='\n\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[0m\]\w \$(parse_git_branch)\[\033[00m\] \n$ '
 else
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\[\033]0;:/home/Mike\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]\[\033[0m\]\n$ '
+    PS1='\n\[\033]0;:/home/Mike\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]\[\033[0m\]\n$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -77,7 +77,7 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1='\[\033]0;:/home/Mike\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]\[\033[0m\]\n$ '
+    PS1='\n\[\033]0;:/home/Mike\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]\[\033[0m\]\n$ '
     ;;
 *)
     ;;
@@ -174,6 +174,10 @@ alias gsg='g status --porcelain | cut -b 1-3 --complement | grep'
 alias gbg='g branch | cut -b 1-2 --complement | grep'
 # use these like so:
 # g checkout $(gbg keyword); g add $(gsg file-keyword)
+
+alias quote='sed '\''s/^/"/; s/$/"/'\'' '
+alias unquote='sed '\''s/^"//; s/"$//'\'' '
+alias linefy='tr " " "\n"'
 
 ######### aliases
 
