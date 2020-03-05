@@ -178,6 +178,7 @@ alias gbg='g branch | cut -b 1-2 --complement | grep'
 alias quote='sed '\''s/^/"/; s/$/"/'\'' '
 alias unquote='sed '\''s/^"//; s/"$//'\'' '
 alias linefy='tr " " "\n"'
+alias despace="sed 's/ /\\\\ /g'"
 
 ######### aliases
 
