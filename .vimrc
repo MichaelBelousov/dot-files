@@ -36,10 +36,10 @@ Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set st=4 sts=4
+" set tabstop=4
+" set shiftwidth=4
+" set expandtab
+" set st=4 sts=4
 
 function! ResetTabs(count)
     filetype plugin indent on
@@ -59,7 +59,7 @@ nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 set softtabstop=0
 set expandtab
 set smarttab
-set shiftwidth=4
+" set shiftwidth=4
 set st=4
 set sts=4
 set tabstop=4
@@ -80,7 +80,7 @@ set tabstop=4
 " set visualbell
 set backspace=indent,eol,start
 set ruler
-set nonumber
+set number
 set showcmd
 set incsearch
 set hlsearch
