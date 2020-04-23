@@ -1,0 +1,320 @@
+{
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.fixAll.stylelint": true,
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "eslint.options": {
+        "configFile": ".eslintrc.json"
+    },
+    "git.path": "C:\\msys64\\usr\\bin\\git.exe",
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#b52e31"
+        },
+        {
+            "name": "Auth0 Orange",
+            "value": "#eb5424"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "C# Purple",
+            "value": "#68217A"
+        },
+        {
+            "name": "Gatsby Purple",
+            "value": "#639"
+        },
+        {
+            "name": "Go Cyan",
+            "value": "#5dc9e2"
+        },
+        {
+            "name": "Java Blue-Gray",
+            "value": "#557c9b"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#00b3e6"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    "vim.leader": "-",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "ps"
+            ], //plugin search
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "pu"
+            ], //plugin update/sync
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "F"
+            ], //toggle file tree
+            "commands": [
+                "revealInExplorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ], //toggle tag tree
+            "commands": [
+                "outline.focus"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "e"
+            ], //open vimrc
+            "commands": [
+                "workbench.action.newWindow"
+            ],
+            "args": [
+                "c:\\users\\mike.belousov\\appdata\\roaming\\code\\user\\settings1.json"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "s"
+            ], //source vimrc
+            "commands": [
+                ":w"
+            ]
+        },
+        // move around
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "d",
+                "d",
+                "p"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "d",
+                "d",
+                "k",
+                "P"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "x",
+                "p"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "x",
+                "h",
+                "h",
+                "p"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                ")"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "("
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ], //open terminal
+            "commands": [
+                "workbench.action.terminal.new"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ], //unhighlight searches
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "B"
+            ], //jump to alternate buffer/file //XXX: not working rn
+            "after": [
+                "<C-tab>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ], //jump to last area in buffer
+            "after": [
+                "`",
+                "`"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<space>"
+            ], //space around char
+            "after": [
+                "i",
+                "<space>",
+                "<esc>",
+                "l",
+                "a",
+                "<space>",
+                "<esc>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<cr>"
+            ], //space around line
+            "after": [
+                "O",
+                "<esc>",
+                "j",
+                "o",
+                "<esc>",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "C"
+            ], //make comment
+            "after": [
+                "A",
+                "<space>",
+                "/",
+                "/"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c"
+            ], //make comment
+            "after": [
+                "I",
+                "/",
+                "/",
+                "<esc>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                ":"
+            ], //show command pallete
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "n",
+                "e"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ],
+        }
+    ],
+    "[csharp]": {
+        "editor.defaultFormatter": "Leopotam.csharpfixformat"
+    },
+    "csharpfixformat.style.newline.atEnd": true,
+    "csharpfixformat.style.spaces.beforeParenthesis": false,
+    "csharpfixformat.style.spaces.insideEmptyBraces": false,
+    "editor.minimap.enabled": false,
+    "csharpfixformat.style.braces.onSameLine": false,
+    "csharpfixformat.style.operators.onSameLine": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "team.appInsights.enabled": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "window.zoomLevel": 0,
+}
