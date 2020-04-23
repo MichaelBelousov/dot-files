@@ -1,0 +1,19 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+w j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.navigateRight"
+    }
+]
