@@ -1,4 +1,21 @@
+// Place your settings in this file to overwrite the default settings
 {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.autoSave": "afterDelay",
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.codeLens": false,
+    "godot_tools.editor_path": "C:\\Users\\Mike\\Downloads\\Godot_v3.2.1-stable_mono_win64\\Godot_v3.2.1-stable_mono_win64\\Godot_v3.2.1-stable_mono_win64.exe",
+    //"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+    "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "--login",
+        "-i", /*"-c", "cd ${workspaceFolder}"*/
+    ],
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen",
+        "+workbench.action.navigateUp",
+        "+workbench.action.navigateDown",
+    ],
     "eslint.validate": [
         "javascript",
         "javascriptreact",
@@ -316,5 +333,5 @@
     "telemetry.enableTelemetry": false,
     "team.appInsights.enabled": false,
     "gitlens.advanced.telemetry.enabled": false,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 0
 }

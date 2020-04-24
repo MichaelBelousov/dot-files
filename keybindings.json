@@ -15,5 +15,20 @@
     {
         "key": "ctrl+w l",
         "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+w n",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    }
+    {
+        "key": "ctrl+w n",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+w c",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
     }
 ]
