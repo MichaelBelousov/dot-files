@@ -22,8 +22,8 @@
         "when": "terminalFocus"
     }
     {
-        "key": "ctrl+w n",
-        "command": "workbench.action.terminal.focusNext",
+        "key": "ctrl+w p",
+        "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
     },
     {
