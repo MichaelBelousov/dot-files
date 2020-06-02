@@ -169,9 +169,9 @@ fi
 
 
 # utility for grepping git status output
-alias gsg='g status --porcelain | cut -b 1-3 --complement | grep'
+alias gsg='git status --porcelain | cut -b 1-3 --complement | grep'
 # utility for grepping git branch output
-alias gbg='g branch | cut -b 1-2 --complement | grep'
+alias gbg='git branch | cut -b 1-2 --complement | grep'
 # use these like so:
 # g checkout $(gbg keyword); g add $(gsg file-keyword)
 
@@ -183,6 +183,9 @@ alias despace="sed 's/ /\\\\ /g'"
 ######### aliases
 
 alias g='git'
+# TODO: make cross-platform with msys2
+source /usr/share/bash-completion/completions/git
+__git_complete g __git_main # turns out my stupid alias has been making me type more rather than less until now
 alias s='sudo'
 
 ######### functions
