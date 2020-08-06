@@ -103,7 +103,7 @@ function prompt_update() {
 
 # thanks @archlinux/tmux
 # TODO: have a global session to be attached to on login
-if hash tmux 2>/dev/null; then
+if hash tmux 2>/dev/null && [[ "$TERM_PROGRAM" != "vscode" ]]; then
     [[ $- != *i* ]] && return
     if [[ -z "$TMUX" ]]; then 
         # if no tmux session detected, start tmux
