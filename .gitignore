@@ -14,3 +14,6 @@
 !.scripts/
 !.scripts/*
 !.gitsetup.sh
+!settings.json
+!keybindings.json
+# why am I ignoring everything again? Ought to read the log
