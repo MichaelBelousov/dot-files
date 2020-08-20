@@ -1,337 +1,187 @@
-// Place your settings in this file to overwrite the default settings
 {
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.autoSave": "afterDelay",
-    "C_Cpp.updateChannel": "Insiders",
-    "editor.codeLens": false,
-    "godot_tools.editor_path": "C:\\Users\\Mike\\Downloads\\Godot_v3.2.1-stable_mono_win64\\Godot_v3.2.1-stable_mono_win64\\Godot_v3.2.1-stable_mono_win64.exe",
-    //"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
-    "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
-    "terminal.integrated.shellArgs.windows": [
-        "--login",
-        "-i", /*"-c", "cd ${workspaceFolder}"*/
-    ],
-    "terminal.integrated.commandsToSkipShell": [
-        "-workbench.action.quickOpen",
-        "+workbench.action.navigateUp",
-        "+workbench.action.navigateDown",
-    ],
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
-    "css.validate": false,
-    "less.validate": false,
-    "scss.validate": false,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.fixAll.stylelint": true,
-        "source.fixAll.eslint": true
+  "explorer.confirmDelete": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "editor.fontSize": 13,
+  "git.path": "C:\\msys64\\usr\\bin\\git.exe",
+  "breadcrumbs.enabled": true,
+  "editor.minimap.enabled": false,
+  "vim.leader": "-",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "ps"], //plugin search
+      "after": ["d", "d"]
     },
-    "editor.formatOnSave": true,
-    "eslint.options": {
-        "configFile": ".eslintrc.json"
+    {
+      "before": ["<leader>", "pu"], //plugin update/sync
+      "after": ["d", "d"]
     },
-    "git.path": "C:\\msys64\\usr\\bin\\git.exe",
-    "peacock.favoriteColors": [
-        {
-            "name": "Angular Red",
-            "value": "#b52e31"
-        },
-        {
-            "name": "Auth0 Orange",
-            "value": "#eb5424"
-        },
-        {
-            "name": "Azure Blue",
-            "value": "#007fff"
-        },
-        {
-            "name": "C# Purple",
-            "value": "#68217A"
-        },
-        {
-            "name": "Gatsby Purple",
-            "value": "#639"
-        },
-        {
-            "name": "Go Cyan",
-            "value": "#5dc9e2"
-        },
-        {
-            "name": "Java Blue-Gray",
-            "value": "#557c9b"
-        },
-        {
-            "name": "JavaScript Yellow",
-            "value": "#f9e64f"
-        },
-        {
-            "name": "Mandalorian Blue",
-            "value": "#1857a4"
-        },
-        {
-            "name": "Node Green",
-            "value": "#215732"
-        },
-        {
-            "name": "React Blue",
-            "value": "#00b3e6"
-        },
-        {
-            "name": "Something Different",
-            "value": "#832561"
-        },
-        {
-            "name": "Vue Green",
-            "value": "#42b883"
-        }
-    ],
-    "vim.leader": "-",
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<leader>",
-                "ps"
-            ], //plugin search
-            "after": [
-                "d",
-                "d"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "pu"
-            ], //plugin update/sync
-            "after": [
-                "d",
-                "d"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "F"
-            ], //toggle file tree
-            "commands": [
-                "revealInExplorer"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "f"
-            ], //toggle tag tree
-            "commands": [
-                "outline.focus"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "r",
-                "e"
-            ], //open vimrc
-            "commands": [
-                "workbench.action.newWindow"
-            ],
-            "args": [
-                "c:\\users\\mike.belousov\\appdata\\roaming\\code\\user\\settings1.json"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "r",
-                "s"
-            ], //source vimrc
-            "commands": [
-                ":w"
-            ]
-        },
-        // move around
-        {
-            "before": [
-                "<C-j>"
-            ],
-            "after": [
-                "d",
-                "d",
-                "p"
-            ]
-        },
-        {
-            "before": [
-                "<C-k>"
-            ],
-            "after": [
-                "d",
-                "d",
-                "k",
-                "P"
-            ]
-        },
-        {
-            "before": [
-                "<C-l>"
-            ],
-            "after": [
-                "x",
-                "p"
-            ]
-        },
-        {
-            "before": [
-                "<C-h>"
-            ],
-            "after": [
-                "x",
-                "h",
-                "h",
-                "p"
-            ]
-        },
-        {
-            "before": [
-                "J"
-            ],
-            "after": [
-                ")"
-            ]
-        },
-        {
-            "before": [
-                "K"
-            ],
-            "after": [
-                "("
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "t"
-            ], //open terminal
-            "commands": [
-                "workbench.action.terminal.new"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "/"
-            ], //unhighlight searches
-            "commands": [
-                ":nohl"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "B"
-            ], //jump to alternate buffer/file //XXX: not working rn
-            "after": [
-                "<C-tab>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "b"
-            ], //jump to last area in buffer
-            "after": [
-                "`",
-                "`"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "<space>"
-            ], //space around char
-            "after": [
-                "i",
-                "<space>",
-                "<esc>",
-                "l",
-                "a",
-                "<space>",
-                "<esc>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "<cr>"
-            ], //space around line
-            "after": [
-                "O",
-                "<esc>",
-                "j",
-                "o",
-                "<esc>",
-                "k"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "C"
-            ], //make comment
-            "after": [
-                "A",
-                "<space>",
-                "/",
-                "/"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "c"
-            ], //make comment
-            "after": [
-                "I",
-                "/",
-                "/",
-                "<esc>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                ":"
-            ], //show command pallete
-            "commands": [
-                "workbench.action.showCommands"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "n",
-                "e"
-            ],
-            "commands": [
-                "editor.action.marker.next"
-            ],
-        }
-    ],
-    "[csharp]": {
-        "editor.defaultFormatter": "Leopotam.csharpfixformat"
+    {
+      "before": ["<leader>", "F"], //toggle file tree
+      "commands": ["revealInExplorer"]
     },
-    "csharpfixformat.style.newline.atEnd": true,
-    "csharpfixformat.style.spaces.beforeParenthesis": false,
-    "csharpfixformat.style.spaces.insideEmptyBraces": false,
-    "editor.minimap.enabled": false,
-    "csharpfixformat.style.braces.onSameLine": false,
-    "csharpfixformat.style.operators.onSameLine": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "team.appInsights.enabled": false,
-    "gitlens.advanced.telemetry.enabled": false,
-    "window.zoomLevel": 0
+    {
+      "before": ["<leader>", "f"], //toggle tag tree
+      "commands": ["outline.focus"]
+    },
+    {
+      "before": ["<leader>", "r", "e"], //open vimrc
+      "commands": ["workbench.action.newWindow"],
+      "args": [
+        "c:\\users\\mike.belousov\\appdata\\roaming\\code\\user\\settings1.json"
+      ]
+    },
+    {
+      "before": ["<leader>", "r", "s"], //source vimrc
+      "commands": [":w"]
+    },
+    // move around
+    {
+      "before": ["<C-j>"],
+      "after": ["d", "d", "p"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["d", "d", "k", "P"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["x", "p"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["x", "h", "h", "p"]
+    },
+    {
+      "before": ["J"],
+      "after": [")"]
+    },
+    {
+      "before": ["K"],
+      "after": ["("]
+    },
+    {
+      "before": ["<leader>", "t"], //open terminal
+      "commands": ["workbench.action.terminal.new"]
+    },
+    {
+      "before": ["<leader>", "/"], //unhighlight searches
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "B"], //jump to alternate buffer/file //XXX: not working rn
+      "after": ["<C-tab>"]
+    },
+    {
+      "before": ["<leader>", "b"], //jump to last area in buffer
+      "after": ["`", "`"]
+    },
+    {
+      "before": ["<leader>", "<space>"], //space around char
+      "after": ["i", "<space>", "<esc>", "l", "a", "<space>", "<esc>"]
+    },
+    {
+      "before": ["<leader>", "<cr>"], //space around line
+      "after": ["O", "<esc>", "j", "o", "<esc>", "k"]
+    },
+    {
+      "before": ["<leader>", "C"], //make comment
+      "after": ["A", "<space>", "/", "/"]
+    },
+    {
+      "before": ["<leader>", "c"], //make comment
+      "after": ["I", "/", "/", "<esc>"]
+    },
+    {
+      "before": ["<leader>", ":"], //show command pallete
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["g", "n", "e"],
+      "commands": ["editor.action.marker.next"]
+    }
+  ],
+  //"terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
+  "azureFunctions.showCoreToolsWarning": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "team.showWelcomeMessage": false,
+  //"vscode-neovim.neovimPath": "/usr/bin/nvim",
+  //"vscode-neovim.escape": "ctrl+[",
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.colorTheme": "Monokai",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.formatOnSave": true,
+  "team.appInsights.enabled": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "gitlens.advanced.telemetry.enabled": false,
+  "terminal.integrated.commandsToSkipShell": ["-workbench.action.quickOpen"],
+  "debug.node.autoAttach": "disabled",
+  "debug.javascript.usePreview": false,
+  "editor.codeLens": false
 }
