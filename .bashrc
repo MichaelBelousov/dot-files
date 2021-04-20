@@ -198,6 +198,11 @@ function sys_name {
     return $(uname -s)
 }
 
+function bak {
+    mv $1 "$1.bak"
+}
+
+
 ######## Per-Platform Config?
 
 # NOTE: if windows specific config gets too big, move to separate file and source
