@@ -180,9 +180,11 @@ alias unquote='sed '\''s/^"//; s/"$//'\'' '
 alias linefy='tr " " "\n"'
 alias despace="sed 's/ /\\\\ /g'"
 
+
 ######### aliases
 
 alias g='git'
+alias ggrep='git grep -n'
 # TODO: make cross-platform with msys2
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main # turns out my stupid alias has been making me type more rather than less until now
