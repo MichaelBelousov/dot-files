@@ -204,6 +204,10 @@ function bak {
     mv $1 "$1.bak"
 }
 
+function gbat {
+    git show $1:$2 | bat --language ${2##*.}
+}
+
 
 ######## Per-Platform Config?
 
