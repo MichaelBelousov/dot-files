@@ -10,7 +10,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": 0,
+  "[python]": {
+    "editor.defaultFormatter": null
+  },
   "editor.fontSize": 13,
   "git.path": "C:\\msys64\\usr\\bin\\git.exe",
   "breadcrumbs.enabled": true,
@@ -18,11 +20,15 @@
   "vim.leader": "-",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "ps"], //plugin search
+      "before": ["y", "p"], //plugin search
+      "commands": ["copyRelativeFilePath"]
+    },
+    {
+      "before": ["<leader>", "p", "s"], //plugin search
       "after": ["d", "d"]
     },
     {
-      "before": ["<leader>", "pu"], //plugin update/sync
+      "before": ["<leader>", "p", "u"], //plugin update/sync
       "after": ["d", "d"]
     },
     {
@@ -37,7 +43,7 @@
       "before": ["<leader>", "r", "e"], //open vimrc
       "commands": ["workbench.action.newWindow"],
       "args": [
-        "c:\\users\\mike.belousov\\appdata\\roaming\\code\\user\\settings1.json"
+        "c:\\users\\mike.belousov\\appdata\\roaming\\code\\user\\settings.json"
       ]
     },
     {
@@ -73,6 +79,13 @@
       "before": ["<leader>", "t"], //open terminal
       "commands": ["workbench.action.terminal.new"]
     },
+    /*
+    {
+      "before": ["<leader>", "t"], //toggle terminal/debug console?
+      "commands": ["workbench.action.terminal.new"],
+      //"when": ""
+    },
+    */
     {
       "before": ["<leader>", "/"], //unhighlight searches
       "commands": [":nohl"]
@@ -108,6 +121,10 @@
     {
       "before": ["g", "n", "e"],
       "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["g", "p", "e"],
+      "commands": ["editor.action.marker.prev"]
     }
   ],
   //"terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
@@ -170,7 +187,7 @@
   //"vscode-neovim.neovimPath": "/usr/bin/nvim",
   //"vscode-neovim.escape": "ctrl+[",
   "vsicons.dontShowNewVersionMessage": true,
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "Monokai Dimmed",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -183,5 +200,60 @@
   "terminal.integrated.commandsToSkipShell": ["-workbench.action.quickOpen"],
   "debug.node.autoAttach": "disabled",
   "debug.javascript.usePreview": false,
-  "editor.codeLens": false
+  "python.showStartPage": false,
+  "team.showFarewellMessage": false,
+  "gitlens.codeLens.enabled": false,
+  "godot_tools.editor_path": "/home/mike/personal/debt-civ/godot/bin/godot.x11.tools.64.llvm",
+  "testMate.cpp.log.userId": "dd852d0b3effb8d3ad7b41dc971c5086831de008",
+  "testMate.cpp.log.logSentry": "enable",
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "workbench.sideBar.location": "right",
+  // CodeLLDB extension settings
+  "lldb.commandCompletions": false, // was causing crashes, this might fix...
+  "lldb.launch.initCommands": [
+    "script lldb.debugger.HandleCommand('command script import /home/mike/work/imodel02/bsitools/anycpu/BentleyLldbVisualizers.py')"
+  ],
+  "clangd.onConfigChanged": "restart",
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnSave": false
+  },
+  // (maybe?) needed to prevent xonsh from starting up for debug shells
+  "terminal.integrated.shell.linux": "/usr/bin/bash",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "xonsh": {
+      "path": "xonsh"
+    }
+  },
+  "indentRainbow.ignoreErrorLanguages": ["markdown", "cpp", "python"],
+  "editor.tabSize": 8,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off"
 }
