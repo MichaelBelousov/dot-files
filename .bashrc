@@ -205,9 +205,7 @@ function bak {
 }
 
 function gbat {
-    IFS=$'\0';
-    args=($@);
-    git show $1:$2 | bat --language ${2##*.} ${args[@]:2};
+    git show $1:$2 | bat --language ${2##*.} ${@:2}
 }
 
 
