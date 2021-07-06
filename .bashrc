@@ -226,3 +226,6 @@ else
     alias getclip='xclip -selection c -o'
     alias putclip='xclip -selection c -i'
 fi
+
+export DO_NOT_TRACK=1
+
