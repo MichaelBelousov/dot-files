@@ -86,7 +86,8 @@ esac
 PROMPT_COMMAND=prompt_update
 
 function prompt_update() {
-    export PS1="\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[35m\]$(parse_git_branch)\[\033[36m\] $(display_time)\n\[\033[00m\]\$ "
+    NIX_BIT=$([ -n "$IN_NIX_SHELL" ] && echo " NIX-SHELL" || echo "")
+    export PS1="\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[35m\]$(parse_git_branch)\[\033[36m\] $(display_time)$NIX_BIT\n\[\033[00m\]\$ "
 }
 
 
@@ -96,19 +97,16 @@ function prompt_update() {
 # GIT_PROMPT_ONLY_IN_REPO=1
 # source ~/.bash-git-prompt/gitprompt.sh
 
-######
-
-######
-
-
 # thanks @archlinux/tmux
 # TODO: have a global session to be attached to on login
-if hash tmux 2>/dev/null; then
-    [[ $- != *i* ]] && return
-    if [[ -z "$TMUX" ]]; then 
-        # if no tmux session detected, start tmux
-        exec tmux
-        # TODO: unset the tmux variable on startup shell
+if [[ "$TERM_PROGRAM" != "vscode" && -z "$MIKE_NO_TERMUX" ]]; then
+    if hash tmux 2>/dev/null; then
+        [[ $- != *i* ]] && return
+        if [[ -z "$TMUX" ]]; then
+            # if no tmux session detected, start tmux
+            exec tmux
+            # TODO: unset the tmux variable on startup shell
+        fi
     fi
 fi
 
@@ -201,11 +199,11 @@ function sys_name {
 }
 
 function bak {
-    mv $1 "$1.bak"
+    mv $(realpath $1) "$(realpath $1).bak"
 }
 
 function gbat {
-    git show $1:$2 | bat --language ${2##*.} ${@:2}
+    git show "$1":"$2" | bat --language "${2##*.}" ${@:2}
 }
 
 
