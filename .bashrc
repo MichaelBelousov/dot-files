@@ -225,5 +225,7 @@ else
     alias putclip='xclip -selection c -i'
 fi
 
+export EDITOR=/usr/bin/vim
+
 export DO_NOT_TRACK=1
 
