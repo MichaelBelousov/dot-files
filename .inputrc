@@ -116,5 +116,7 @@ $endif
 set editing-mode vi
 
 $if mode=vi
-  # set keymap vi-insert
+  set keymap vi-insert
+  Control-p: previous-history
+  Control-n: next-history
 $endif
