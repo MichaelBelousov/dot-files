@@ -16,4 +16,5 @@
 !.gitsetup.sh
 !settings.json
 !keybindings.json
+!.inputrc
 # why am I ignoring everything again? Ought to read the log
