@@ -86,7 +86,8 @@ esac
 PROMPT_COMMAND=prompt_update
 
 function prompt_update() {
-    export PS1="\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[35m\]$(parse_git_branch)\[\033[36m\] $(display_time)\n\[\033[00m\]\$ "
+    NIX_BIT=$([ -n "$IN_NIX_SHELL" ] && echo " NIX-SHELL" || echo "")
+    export PS1="\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[35m\]$(parse_git_branch)\[\033[36m\] $(display_time)$NIX_BIT\n\[\033[00m\]\$ "
 }
 
 
@@ -96,19 +97,16 @@ function prompt_update() {
 # GIT_PROMPT_ONLY_IN_REPO=1
 # source ~/.bash-git-prompt/gitprompt.sh
 
-######
-
-######
-
-
 # thanks @archlinux/tmux
 # TODO: have a global session to be attached to on login
-if hash tmux 2>/dev/null && [[ "$TERM_PROGRAM" != "vscode" ]]; then
-    [[ $- != *i* ]] && return
-    if [[ -z "$TMUX" ]]; then 
-        # if no tmux session detected, start tmux
-        exec tmux
-        # TODO: unset the tmux variable on startup shell
+if [[ "$TERM_PROGRAM" != "vscode" && -z "$MIKE_NO_TERMUX" ]]; then
+    if hash tmux 2>/dev/null; then
+        [[ $- != *i* ]] && return
+        if [[ -z "$TMUX" ]]; then
+            # if no tmux session detected, start tmux
+            exec tmux
+            # TODO: unset the tmux variable on startup shell
+        fi
     fi
 fi
 
@@ -180,9 +178,11 @@ alias unquote='sed '\''s/^"//; s/"$//'\'' '
 alias linefy='tr " " "\n"'
 alias despace="sed 's/ /\\\\ /g'"
 
+
 ######### aliases
 
 alias g='git'
+alias ggrep='git grep -n'
 # TODO: make cross-platform with msys2
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main # turns out my stupid alias has been making me type more rather than less until now
@@ -197,6 +197,15 @@ function calc {
 function sys_name {
     return $(uname -s)
 }
+
+function bak {
+    mv $(realpath $1) "$(realpath $1).bak"
+}
+
+function gbat {
+    git show "$1":"$2" | bat --language "${2##*.}" ${@:2}
+}
+
 
 ######## Per-Platform Config?
 
@@ -217,3 +226,7 @@ else
 fi
 
 set -o vi
+export EDITOR=/usr/bin/vim
+
+export DO_NOT_TRACK=1
+

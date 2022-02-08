@@ -80,7 +80,7 @@ set tabstop=4
 " set visualbell
 set backspace=indent,eol,start
 set ruler
-set number
+set nonumber
 set showcmd
 set incsearch
 set hlsearch
@@ -172,7 +172,6 @@ noremap <left> <nop>
 noremap <right> <nop>
 noremap <down> <nop>
 noremap <up> <nop>
-" inoremap <c-j> <esc>
 " inoremap <s-BS> <del>
 " rearranging
 nnoremap <c-j> ddp
