@@ -215,3 +215,5 @@ else
     alias getclip='xclip -selection c -o'
     alias putclip='xclip -selection c -i'
 fi
+
+set -o vi
