@@ -117,6 +117,10 @@ set editing-mode vi
 
 $if mode=vi
   set keymap vi-insert
+  # keys I'm to used to before switching to vi mode... I should probably just get used to the new methods
+  # but this will help in the meantime
   Control-p: previous-history
   Control-n: next-history
+  Control-e: end-of-line
+  Control-a: beginning-of-line
 $endif
