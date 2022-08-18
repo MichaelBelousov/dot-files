@@ -17,4 +17,5 @@
 !settings.json
 !keybindings.json
 !.inputrc
+!.gdbinit
 # why am I ignoring everything again? Ought to read the log
