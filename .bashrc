@@ -99,7 +99,7 @@ function prompt_update() {
 
 # thanks @archlinux/tmux
 # TODO: have a global session to be attached to on login
-if [[ "$TERM_PROGRAM" != "vscode" && -z "$MIKE_NO_TERMUX" ]]; then
+if [[ -z "$MIKE_NO_TERMUX" ]]; then
     if hash tmux 2>/dev/null; then
         [[ $- != *i* ]] && return
         if [[ -z "$TMUX" ]]; then
@@ -116,7 +116,7 @@ alias ssh='ssh -o SendEnv=TMUX'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -FGh --color=auto --hyperlink=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -154,13 +154,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+# disable ctrl-s default behavior
+# TODO: setup ctrl-shift-r for forward-reverse-history-search
+stty -ixon
 
 
 # export PYTHONSTARTUP=$HOME/.pythonrc
 
 # multiple shell history
-# export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoredups:erasedups
 # shopt -s histappend
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # end multiple shell history
@@ -228,5 +230,13 @@ fi
 set -o vi
 export EDITOR=/usr/bin/vim
 
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export DO_NOT_TRACK=1
+
+# or \a
+export BELL=$'\x07'
+
+alias rmr=/usr/bin/rm
+alias rm=trash
+
 
