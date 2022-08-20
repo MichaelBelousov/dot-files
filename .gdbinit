@@ -14,6 +14,13 @@ print("Registered pretty printers for UE4 classes")
 
 end
 
+python
+import sys
+sys.path.append('/home/mike/work/imodel02-docker/')
+import bsiformatters
+print("Registered pretty printers for bentley imodel02 classes")
+end
+
 
 ## temp for chromium
 # source /home/mike/work/electron-src/electron/src/tools/gdb/gdbinit
@@ -36,4 +43,7 @@ end
 # p variable
 # continue
 # end
+
+# rr
+alias rf = reverse-finish
 
