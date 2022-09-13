@@ -102,7 +102,7 @@ function prompt_update() {
 if [[ -z "$MIKE_NO_TERMUX" ]]; then
     if hash tmux 2>/dev/null; then
         [[ $- != *i* ]] && return
-        if [[ -z "$TMUX" ]]; then
+        if [[ -z "$TMUX" && -z "$MIKE_VS_JS_DEBUG_TERMINAL" ]]; then
             # if no tmux session detected, start tmux
             exec tmux
             # TODO: unset the tmux variable on startup shell
@@ -238,5 +238,6 @@ export BELL=$'\x07'
 
 alias rmr=/usr/bin/rm
 alias rm=trash
+alias files=nautilus
 
 

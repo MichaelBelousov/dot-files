@@ -44,6 +44,13 @@ end
 # continue
 # end
 
-# rr
+####### rr
+
 alias rf = reverse-finish
 
+# reverse until
+define ru
+  # TODO: spread all args
+  tbreak $arg0
+  reverse-continue
+end
