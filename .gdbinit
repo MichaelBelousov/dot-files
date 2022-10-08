@@ -26,7 +26,7 @@ end
 # source /home/mike/work/electron-src/electron/src/tools/gdb/gdbinit
 
 define hex
-  printf "%#x\n", $arg0
+  printf "%#llx\n", $arg0
 end
 
 # because I like it in bash
