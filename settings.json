@@ -5,7 +5,7 @@
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -13,11 +13,19 @@
   "[python]": {
     "editor.defaultFormatter": null
   },
-  "git.path": "C:\\msys64\\usr\\bin\\git.exe",
+  //"git.path": "C:\\msys64\\usr\\bin\\git.exe",
   "breadcrumbs.enabled": true,
   "editor.minimap.enabled": false,
   "vim.leader": "-",
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["g", "s"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
     {
       "before": ["y", "p"], //plugin search
       "commands": ["copyRelativeFilePath"]
@@ -76,18 +84,16 @@
     },
     {
       "before": ["<leader>", "t"], //open terminal
-      "commands": ["workbench.action.terminal.new"]
+      //"commands": ["workbench.action.terminal.new"]
+      "commands": ["workbench.action.terminal.toggleTerminal"]
     },
-    /*
     {
-      "before": ["<leader>", "t"], //toggle terminal/debug console?
-      "commands": ["workbench.action.terminal.new"],
-      //"when": ""
+      "before": ["<leader>", "T"],
+      "commands": ["workbench.debug.action.toggleRepl"]
     },
-    */
     {
       "before": ["<leader>", "/"], //unhighlight searches
-      "commands": [":nohl"]
+      "after": [":nohl"]
     },
     {
       "before": ["<leader>", "B"], //jump to alternate buffer/file //XXX: not working rn
@@ -111,7 +117,7 @@
     },
     {
       "before": ["<leader>", "c"], //make comment
-      "after": ["I", "/", "/", "<esc>"],
+      "after": ["I", "/", "/", "<esc>"]
     },
     {
       "before": ["<leader>", ":"], //show command pallete
@@ -124,13 +130,25 @@
     {
       "before": ["g", "p", "e"],
       "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["g", "l"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
+      "before": ["g", "h"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["g", "H"],
+      "commands": ["editor.action.showHover"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "c"], // toggle line comment
       "commands": ["editor.action.commentLine"]
-    },
+    }
   ],
   //"terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
   "azureFunctions.showCoreToolsWarning": false,
@@ -208,7 +226,7 @@
   "team.showFarewellMessage": false,
   "gitlens.codeLens.enabled": false,
   //"godot_tools.editor_path": "/home/mike/personal/debt-civ/godot/bin/godot.x11.tools.64.llvm",
-  "godot_tools.editor_path": "/home/mike/.local/share/bin/Godot_v3.4-stable_x11.64",
+  "godot_tools.editor_path": "/home/mike/.local/share/bin/Godot_v3.4.4-stable_mono_x11.64",
   "testMate.cpp.log.userId": "dd852d0b3effb8d3ad7b41dc971c5086831de008",
   "testMate.cpp.log.logSentry": "enable",
   "C_Cpp.intelliSenseEngine": "Disabled",
@@ -226,22 +244,29 @@
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     "editor.formatOnSave": false
   },
-  // (maybe?) needed to prevent xonsh from starting up for debug shells
-  //"terminal.integrated.shell.linux": "/usr/bin/bash",
-  "terminal.integrated.defaultProfile.linux": "bash",
+  /** This is confusing, my bash morphs into tmux in the bashrc, but not if in a debug terminal since that breaks it
+   * so really this is tmux and you can't do it otherwise, which I'm ok with
+   */
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.automationProfile.linux": {
+    "path": "bash"
+  },
   "terminal.integrated.profiles.linux": {
+    "tmux": {
+      "path": "bash",
+      "icon": "terminal-tmux"
+    },
     "bash": {
-      "path": "bash"
+      "path": "bash",
+      "env": {
+        "MIKE_NO_TERMUX": "1"
+      }
     },
     "zsh": {
       "path": "zsh"
     },
     "fish": {
       "path": "fish"
-    },
-    "tmux": {
-      "path": "tmux",
-      "icon": "terminal-tmux"
     },
     "pwsh": {
       "path": "pwsh",
@@ -282,5 +307,38 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "lldb.verboseLogging": true,
+  "ecsql-lsp.fallbackIModelUrl": "https://localhost:300",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "debug.onTaskErrors": "debugAnyway",
+  "ecsql-lsp.queryCallRegex": "(i[mM]odel|[dD]b)\\.(query|withPreparedStatement)",
+  "python.analysis.extraPaths": ["/snap/blender/2106/3.1/scripts/modules"],
+  "editor.renderWhitespace": "none",
+  "csharp.referencesCodeLens.enabled": false,
+  "[csharp]": {
+    "editor.formatOnSave": false
+  },
+  "gitlens.advanced.blame.customArguments": [
+    // Better to do a revision file
+    //"--ignore-rev",
+    //"007be59f93813bc5525b1fe2afc48f20761bca56"
+  ],
+  "editor.inlayHints.enabled": "off",
+  "C_Cpp.inlayHints.parameterNames.enabled": false,
+  // looks like this may be clangd?
+  "csharp.inlayHints.types.enabled": false,
+  //"clangd.inlayHints",
+  //"editor.language.colorizedBracketPairs": [["{", "}"]],
+  "debug.javascript.terminalOptions": {
+    "env": {
+      "MIKE_VS_JS_DEBUG_TERMINAL": "1"
+    }
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false
+  //"terminal.integrated.smoothScrolling": true
 }
