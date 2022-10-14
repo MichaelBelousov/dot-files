@@ -205,7 +205,7 @@ function bak {
 }
 
 function gbat {
-    git show "$1":"$2" | bat --language "${2##*.}" ${@:2}
+    git show $1:$2 | bat --language ${2##*.}
 }
 
 
