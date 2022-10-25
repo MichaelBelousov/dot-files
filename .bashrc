@@ -214,14 +214,18 @@ function gbat {
 # NOTE: if windows specific config gets too big, move to separate file and source
 # NOTE: add machine-specific rc file
 
-# TODO: use a startswith() function to abstract these tests
-if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ] || [ "$(expr substr $(uname -s) 1 4)" == "MSYS" ]; then
+OS_NAME="$(uname -s)"
+# NOTE: do I still need this on my msys2 machine?
+if [ "${OS_NAME:1:5}" == "MINGW" ] || [ "${OS_NAME:1:4}" == "MSYS" ]; then
     alias getclip='cat /dev/clipboard'
     alias putclip='tee /dev/clipboard'
     # use winpty to correctly use interactive windows tools from mintty
     alias python3='winpty /d/programs/Python/Python36-32/python'
     alias prolog='winpty /d/programs/swipl/bin'
-    # add inkscape to path on windows for me
+elif [ "${OS_NAME}" = "Darwin" ]; then
+    # nothing
+    alias getclip='pbpaste'
+    alias putclip='pbcopy'
 else
     alias getclip='xclip -selection c -o'
     alias putclip='xclip -selection c -i'
