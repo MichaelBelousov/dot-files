@@ -258,5 +258,10 @@ export BELL=$'\x07'
 alias rmr=/usr/bin/rm
 alias rm=trash
 alias files=nautilus
+alias mpstree=pstree\ -Tanpl
+
+function code {
+    env -u TMUX code $@
+}
 
 
