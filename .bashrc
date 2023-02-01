@@ -189,6 +189,8 @@ alias ggrep='git grep -n'
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main # turns out my stupid alias has been making me type more rather than less until now
 alias s='sudo'
+alias v=vim
+alias n=pnpm
 
 ######### functions
 
