@@ -205,10 +205,27 @@ function sys_name {
 function bak {
     mv $(realpath $1) "$(realpath $1).bak"
 }
+# inline completions
+complete -A file bak
+#
+
+function rename {
+        mv $(realpath $1) "$(realpath $(dirname $1))$2"
+}
+# inline completions
+complete -A file bak
+#
 
 function gbat {
     git show $1:$2 | bat --language ${2##*.}
 }
+_gbat_completions() {
+  if [[ "${#COMP_WORDS[@]}" != "2" ]]; then
+    return;
+  fi
+  COMPREPLY+=($(compgen -W $(git show-ref | cut -d ' ' -f2 | sed 's/refs\/[^\/]\+\///g') -- "${COMP_WORDS[1]}"))
+}
+complete -F _gbat_completions gbat
 
 
 ######## Per-Platform Config?
