@@ -40,11 +40,11 @@
     },
     {
       "before": ["<leader>", "F"], //toggle file tree
-      "commands": ["revealInExplorer"]
+      "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
       "before": ["<leader>", "f"], //toggle tag tree
-      "commands": ["outline.focus"]
+      "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
       "before": ["<leader>", "r", "e"], //open vimrc

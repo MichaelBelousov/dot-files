@@ -2,6 +2,7 @@
 set print finish no
 set history save
 
+set breakpoint pending on
 # set debuginfod enabled on
 
 # python
@@ -80,3 +81,6 @@ define ru
   tbreak $arg0
   reverse-continue
 end
+
+source /home/mike/.signals.gdb
+

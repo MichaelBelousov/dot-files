@@ -188,9 +188,15 @@ nnoremap <localleader>/ :nohl<cr>
 
 " TODO: make applicable without macros
 " visual mode perline macro 
-vnoremap <localleader>@ :'<,'>normal @
+vnoremap <localleader>@ :normal @
 
-vnoremap <localleader>c :'<,'>normal <localleader>c<cr>
+vnoremap <localleader>c :normal <localleader>c<cr>
+
+" linux copy paste selection
+" vnoremap <localleader>y !xclip -selection c -i
+set clipboard=unnamedplus
+
+
 
 " terminal commands
 nnoremap <localleader>t :terminal<cr>

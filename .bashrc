@@ -210,7 +210,7 @@ complete -A file bak
 #
 
 function rename {
-        mv $(realpath $1) "$(realpath $(dirname $1))$2"
+        mv $(realpath $1) "$(realpath $(dirname $1))/$2"
 }
 # inline completions
 complete -A file bak
@@ -263,5 +263,7 @@ alias mpstree=pstree\ -Tanpl
 function code {
     env -u TMUX code $@
 }
+
+export DEBUGINFOD_URLS="https://debuginfod.ubuntu.com"
 
 
