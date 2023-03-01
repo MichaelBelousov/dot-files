@@ -18,4 +18,5 @@
 !keybindings.json
 !.inputrc
 !.gdbinit
+!.signals.gdb
 # why am I ignoring everything again? Ought to read the log
