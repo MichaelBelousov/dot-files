@@ -217,9 +217,10 @@ nnoremap <localleader>W :w !sudo tee % > /dev/null<cr>
 " separators/delinators (e.g. replace quote contents)
 " nnoremap <localleader>p 
 
+" disabled because nvim seemed to follow this where vim didn't
 " timeout length 
-set timeoutlen=1000
-set ttimeoutlen=1000
+" set timeoutlen=1000
+" set ttimeoutlen=1000
 
 " add space around char
 " should be  replaced with 's'
