@@ -32,6 +32,7 @@ Plugin 'surround.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ElmCast/elm-vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'repeat.vim'
 
 call vundle#end()
 
