@@ -1,6 +1,7 @@
 *
 !.gitignore
 !.vimrc
+!init.vim
 !.vim/
 .vim/vundle/
 .vim/.netrwhist
@@ -19,4 +20,7 @@
 !.inputrc
 !.gdbinit
 !.signals.gdb
+!.config
+!.config/nvim
+!.config/nvim/init.vim
 # why am I ignoring everything again? Ought to read the log

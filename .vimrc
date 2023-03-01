@@ -36,10 +36,11 @@ Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 
 filetype plugin indent on
-" set tabstop=4
-" set shiftwidth=4
-" set expandtab
-" set st=4 sts=4
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
 
 function! ResetTabs(count)
     filetype plugin indent on
@@ -47,7 +48,6 @@ function! ResetTabs(count)
     execute "set expandtab"
     execute "set smarttab"
     execute "set shiftwidth=" . a:count
-    execute "set st=" . a:count
     execute "set sts=" . a:count
     execute "set tabstop=" . a:count
     execute "normal gg=G"
@@ -56,13 +56,11 @@ function! ResetTabs(count)
 endfunction
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 
-set softtabstop=0
 set expandtab
 set smarttab
-" set shiftwidth=4
-set st=4
-set sts=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
 " set tabstop=4
 " set shiftwidth=4
@@ -161,7 +159,9 @@ inoremap <silent> <c-w>\ <esc>:TmuxNavigatePrevious<cr>
 
 " --- Mike Stuff ---
 
-set noesckeys
+" nvim, google, and I doesn't recognize this
+" set noesckeys
+
 " edit the this thing from anywhr
 nnoremap <localleader>re :vsplit $MYVIMRC<cr>
 nnoremap <localleader>rs :source $MYVIMRC<cr>
