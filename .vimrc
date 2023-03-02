@@ -79,7 +79,7 @@ set tabstop=2
 " set visualbell
 set backspace=indent,eol,start
 set ruler
-set nonumber
+set number
 set showcmd
 set incsearch
 set hlsearch

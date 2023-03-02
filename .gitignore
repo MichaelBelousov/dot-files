@@ -20,7 +20,9 @@
 !.inputrc
 !.gdbinit
 !.signals.gdb
-!.config
+!.config/
 !.config/nvim
 !.config/nvim/init.vim
+!.config/lvim
+!.config/lvim/config.lua
 # why am I ignoring everything again? Ought to read the log
