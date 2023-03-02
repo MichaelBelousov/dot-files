@@ -3,7 +3,8 @@
 
 " --- general settings
 
-set sts=4 st=4
+" should really just autodetect
+" set sts=4 ts=4
 
 " --- bindings ---
 
@@ -30,4 +31,4 @@ nnoremap <buffer> <localleader>C A  //
 
 let g:syntastic_cpp_checkers = ['clang']
 let g:syntastic_cpp_compiler = 'clang'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+let g:syntastic_cpp_compiler_options = '-std=c++17'
