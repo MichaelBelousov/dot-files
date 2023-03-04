@@ -266,4 +266,13 @@ function code {
 
 export DEBUGINFOD_URLS="https://debuginfod.ubuntu.com"
 
+# TODO: replace this with a committed .bin folder with scripts that I add to path
+# used in .tmux.conf
+if [ ! -e $HOME/.local/bin/tmux_session ]; then
+cat <<EOF > $HOME/.local/bin/tmux_session
+#!/usr/bin/bash
+tmux display-message -p "#{session_name}"
+EOF
+chmod +x $HOME/.local/bin/tmux_session
+fi
 
