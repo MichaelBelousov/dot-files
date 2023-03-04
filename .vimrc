@@ -66,7 +66,7 @@ set tabstop=2
 " set tabstop=4
 " set shiftwidth=4
 " set expandtab
-" set st=4 sts=4
+" set ts=4 sts=4
 " literal set tabs
 
 " nnoremap <localleader>I :<C-U>set tabstop=v:count shiftwidth=v:count st=v:count sts=v:count
@@ -164,8 +164,9 @@ inoremap <silent> <c-w>\ <esc>:TmuxNavigatePrevious<cr>
 " set noesckeys
 
 " edit the this thing from anywhr
-nnoremap <localleader>re :vsplit $MYVIMRC<cr>
-nnoremap <localleader>rs :source $MYVIMRC<cr>
+" NOTE: I used to use $MYVIMRC here but it doesn't work in lunarvim?
+nnoremap <localleader>re :vsplit ~/.vimrc<cr>
+nnoremap <localleader>rs :source ~/.vimrc<cr>
 abbrev @@ michael.belousov98@gmail.com
 abbrev (203) (203) 502-9425
 " elite mode babi
@@ -179,9 +180,6 @@ nnoremap <c-j> ddp
 nnoremap <c-k> ddkP
 nnoremap <c-l> xp
 nnoremap <c-h> xhhp
-" big boy jumps
-nnoremap J <c-d>
-nnoremap K <c-u>
 " open terminal
 nnoremap <localleader>t :terminal ++curwin<cr>
 " clear search
@@ -239,7 +237,7 @@ augroup END
 
 augroup javaIGuess
     autocmd!
-    autocmd FileType java set sts=2 st=2
+    autocmd FileType java set sts=2 ts=2
 augroup END
 
 augroup mike_cpp
@@ -270,4 +268,10 @@ augroup pytex
     autocmd!
     au BufRead,BufNewFile *.pytex set filetype=tex
 augroup END
+
+" neovim
+if has('nvim')
+  nnoremap gne :lua vim.diagnostic.goto_next()<cr>
+  nnoremap gpe :lua vim.diagnostic.goto_prev()<cr>
+endif
 

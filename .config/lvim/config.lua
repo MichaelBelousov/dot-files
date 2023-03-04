@@ -18,6 +18,9 @@ lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
+-- disable auto project detection which can cd to $HOME
+lvim.builtin.project.manual_mode = true
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "-"
 -- add your own keymapping
@@ -186,4 +189,12 @@ lvim.builtin.treesitter.highlight.enable = true
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+
+-- MIKE
+-- my .vimrc, here I'm going to set some things that it seems to overwrite
+-- https://www.lunarvim.org/docs/configuration/keybindings#lsp-bindings
+lvim.lsp.buffer_mappings.normal_mode['gs'] = lvim.lsp.buffer_mappings.normal_mode['K']
+lvim.lsp.buffer_mappings.normal_mode['gh'] = lvim.lsp.buffer_mappings.normal_mode['K']
+-- not working :/
+lvim.keys.normal_mode['<localleader>/'] = false
 
