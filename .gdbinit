@@ -74,6 +74,7 @@ end
 ####### rr
 
 alias rf = reverse-finish
+alias rfin = reverse-finish
 
 # reverse until
 define ru

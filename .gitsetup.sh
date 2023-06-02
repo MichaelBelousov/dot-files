@@ -14,8 +14,12 @@ git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(y
 git config --global alias.stat "status"
 git config --global alias.ds "diff --staged"
 git config --global alias.djs "diff ':!/*.yaml'"
+git config --global alias.ls "ls-files"
+git config --global alias.co "checkout"
+git config --global alias.c "commit"
+git config --global alias.d "diff"
+git config --global alias.a "add"
 
 # vim diffs
 git config --global diff.tool vimdiff
 git config --global difftool.prompt false
-git config --global alias.d "difftool"

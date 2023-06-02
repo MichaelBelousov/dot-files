@@ -43,7 +43,7 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 
-function! ResetTabs(count)
+function! ResetTabs(count, do_retab)
     filetype plugin indent on
     execute "set softtabstop=0"
     execute "set expandtab"
@@ -51,23 +51,18 @@ function! ResetTabs(count)
     execute "set shiftwidth=" . a:count
     execute "set sts=" . a:count
     execute "set tabstop=" . a:count
-    execute "normal gg=G"
-    execute "retab"
-    execute "normal ``"
+    if a:do_retab
+        execute "normal gg=G"
+        execute "retab"
+        execute "normal ``"
+    endif
 endfunction
-nnoremap <localleader>I :<C-U>call ResetTabs(v:count)<cr>
 
 set expandtab
 set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-
-" set tabstop=4
-" set shiftwidth=4
-" set expandtab
-" set ts=4 sts=4
-" literal set tabs
 
 " nnoremap <localleader>I :<C-U>set tabstop=v:count shiftwidth=v:count st=v:count sts=v:count
 
@@ -167,8 +162,6 @@ inoremap <silent> <c-w>\ <esc>:TmuxNavigatePrevious<cr>
 " NOTE: I used to use $MYVIMRC here but it doesn't work in lunarvim?
 nnoremap <localleader>re :vsplit ~/.vimrc<cr>
 nnoremap <localleader>rs :source ~/.vimrc<cr>
-abbrev @@ michael.belousov98@gmail.com
-abbrev (203) (203) 502-9425
 " elite mode babi
 noremap <left> <nop>
 noremap <right> <nop>
@@ -207,6 +200,7 @@ vnoremap <localleader>h K
 nnoremap <localleader>a ea
 " alternate buffer
 nnoremap <localleader>B <c-^>
+nnoremap <C-S-TAB> <c-^>
 " alternate buffer location
 nnoremap <localleader>b ``
 " override readonly
@@ -273,5 +267,19 @@ augroup END
 if has('nvim')
   nnoremap gne :lua vim.diagnostic.goto_next()<cr>
   nnoremap gpe :lua vim.diagnostic.goto_prev()<cr>
+  " not possible to remap this, so it doesn't work
+  nnoremap , :lua vim.lsp.buf.code_action()<cr>
+  nnoremap <F2> :lua vim.lsp.buf.rename()<cr>
 endif
 
+augroup zig
+    autocmd!
+    autocmd FileType zig nnoremap <buffer> <localleader>c I// <esc>
+    autocmd FileType zig nnoremap <buffer> <localleader>C A  // 
+    autocmd FileType zig call ResetTabs(4, 0)
+augroup END
+
+" something breaks when declaring these at the definition of ResetTabs, so
+" doing so here
+nnoremap <localleader>I :<C-U>call ResetTabs(v:count, 1)<cr>
+nnoremap <localleader>i :<C-U>call ResetTabs(v:count, 0)<cr>
