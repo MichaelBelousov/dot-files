@@ -6,7 +6,7 @@ git config --global user.name "Michael Belousov"
 git config --global user.email "michael.belousov98@gmail.com"
 git config --global core.editor "vim"
 
-git config --global grep.lineNumber "true"
+# git config --global grep.lineNumber "true"
 git config --global grep.patternType "perl"
 git config --global grep.fallbackToNoIndex "true"
 
@@ -19,6 +19,8 @@ git config --global alias.co "checkout"
 git config --global alias.c "commit"
 git config --global alias.d "diff"
 git config --global alias.a "add"
+git config --global alias.r "rebase"
+git config --global alias.s "status"
 
 # vim diffs
 git config --global diff.tool vimdiff
