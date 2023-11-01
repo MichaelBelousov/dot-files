@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -233,8 +235,9 @@ complete -F _gbat_completions gbat
 # NOTE: if windows specific config gets too big, move to separate file and source
 # NOTE: add machine-specific rc file
 
-# TODO: use a startswith() function to abstract these tests
-if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ] || [ "$(expr substr $(uname -s) 1 4)" == "MSYS" ]; then
+# TODO: use grep
+OS_NAME="$(uname -s)"
+if [ "${OS_NAME:1:5}" == "MINGW" ] || [ "${OS_NAME:1:4}" == "MSYS" ]; then
     alias getclip='cat /dev/clipboard'
     alias putclip='tee /dev/clipboard'
     # use winpty to correctly use interactive windows tools from mintty
