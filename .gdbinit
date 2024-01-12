@@ -3,7 +3,7 @@ set print finish no
 set history save
 
 set breakpoint pending on
-# set debuginfod enabled on
+set debuginfod enabled on
 
 # python
 # import sys

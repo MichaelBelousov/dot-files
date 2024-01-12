@@ -18,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
+let g:airline#extensions#tagbar#enabled = 0
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lervag/vimtex'
@@ -29,6 +30,7 @@ Plugin 'chaoren/vim-wordmotion'
 Plugin 'eregex.vim'
 Plugin 'mu-template'
 Plugin 'surround.vim'
+let g:tmux_navigator_no_mappings = 1
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ElmCast/elm-vim'
 Plugin 'leafgarland/typescript-vim'
@@ -141,7 +143,6 @@ nnoremap <localleader>sr :SyntasticReset<cr>
 
 " --- TmuxNavigatorSettings ---
 
-let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
 inoremap <silent> <c-w>h <esc>:TmuxNavigateLeft<cr>
 nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
@@ -186,7 +187,7 @@ vnoremap <localleader>c :normal <localleader>c<cr>
 
 " linux copy paste selection
 " vnoremap <localleader>y !xclip -selection c -i
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 
 
@@ -234,11 +235,6 @@ augroup javaIGuess
     autocmd FileType java set sts=2 ts=2
 augroup END
 
-augroup mike_cpp
-    autocmd!
-    autocmd FileType cpp source $HOME/.vim/filetypes/cpp.vim
-augroup END
-
 augroup filespecifics
     autocmd!
     autocmd FileType c nnoremap <buffer> <localleader>c I// <esc>
@@ -283,3 +279,8 @@ augroup END
 " doing so here
 nnoremap <localleader>I :<C-U>call ResetTabs(v:count, 1)<cr>
 nnoremap <localleader>i :<C-U>call ResetTabs(v:count, 0)<cr>
+
+for s:c in ['a', 'A', '<Insert>', 'i', 'I', 'gI', 'gi', 'o', 'O']
+    exe 'nnoremap ' . s:c . ' :nohlsearch<CR>' . s:c
+endfor
+

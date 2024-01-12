@@ -110,13 +110,13 @@ if [[ -z "$MIKE_NO_TERMUX" ]]; then
     fi
 fi
 
-# don't next tmux over ssh
+# don't nest tmux over ssh
 alias ssh='ssh -o SendEnv=TMUX'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -FGh --color=auto --hyperlink=auto'
+    alias ls='ls -FGh --color=auto' # --hyperlink=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -189,8 +189,10 @@ alias ggrep='git grep -n'
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main # turns out my stupid alias has been making me type more rather than less until now
 alias s='sudo'
-alias v=vim
+alias v=lvim
+alias vim=lvim
 alias n=pnpm
+alias n7='pnpm dlx pnpm@7'
 
 ######### functions
 
@@ -205,6 +207,7 @@ function sys_name {
 function bak {
     mv $(realpath $1) "$(realpath $1).bak"
 }
+
 # inline completions
 complete -A file bak
 #
@@ -226,6 +229,12 @@ _gbat_completions() {
   COMPREPLY+=($(compgen -W $(git show-ref | cut -d ' ' -f2 | sed 's/refs\/[^\/]\+\///g') -- "${COMP_WORDS[1]}"))
 }
 complete -F _gbat_completions gbat
+
+function retmux {
+  export TMUX_BAK="$TMUX";
+  unset TMUX;
+  tmux
+}
 
 
 ######## Per-Platform Config?
