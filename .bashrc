@@ -37,6 +37,9 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# on mac
+export TERM=xterm-color
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
@@ -59,7 +62,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 display_time() {
-    date --rfc-3339=ns | cut -b1-11 --complement | cut -b 13- --complement
+    date
 }
 
 parse_git_branch() {
@@ -92,8 +95,6 @@ function prompt_update() {
     export PS1="\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[35m\]$(parse_git_branch)\[\033[36m\] $(display_time)$NIX_BIT\n\[\033[00m\]\$ "
 }
 
-
-
 ###### fancy bash git prompt
 
 # GIT_PROMPT_ONLY_IN_REPO=1
@@ -107,7 +108,9 @@ if [[ -z "$MIKE_NO_TERMUX" ]]; then
         if [[ -z "$TMUX" && -z "$MIKE_VS_JS_DEBUG_TERMINAL" ]]; then
             # if no tmux session detected, start tmux
             exec tmux
-            # TODO: unset the tmux variable on startup shell
+
+            # on mac
+            export TERM="builtin_xterm"
         fi
     fi
 fi
@@ -188,8 +191,8 @@ alias despace="sed 's/ /\\\\ /g'"
 alias g='git'
 alias ggrep='git grep -n'
 # TODO: make cross-platform with msys2
-source /usr/share/bash-completion/completions/git
-__git_complete g __git_main # turns out my stupid alias has been making me type more rather than less until now
+# source /usr/share/bash-completion/completions/git
+# __git_complete g __git_main # turns out my stupid alias has been making me type more rather than less until now
 alias s='sudo'
 alias v=lvim
 alias vim=lvim
@@ -267,8 +270,8 @@ export DO_NOT_TRACK=1
 # or \a
 export BELL=$'\x07'
 
-alias rmr=/usr/bin/rm
-alias rm=trash
+alias rmr=/bin/rm
+# alias rm=trash
 alias files=nautilus
 alias mpstree=pstree\ -Tanpl
 
@@ -288,3 +291,17 @@ EOF
 chmod +x $HOME/.local/bin/tmux_session
 fi
 
+
+# pnpm
+export PNPM_HOME="/Users/mike/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# brew
+export PATH="/opt/homebrew/bin:$PATH"
+# brew end
+
+alias n=pnpm
