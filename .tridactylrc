@@ -5,3 +5,6 @@ set mode ignore
 
 " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
 " vim: set filetype=tridactyl
+
+" https://github.com/tridactyl/tridactyl/issues/1035#issuecomment-425656155
+set editorcmd gnome-terminal --disable-factory -- lvim

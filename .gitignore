@@ -1,6 +1,7 @@
 *
 !.gitignore
 !.vimrc
+!.tridactylrc
 !init.vim
 !.vim/
 .vim/vundle/
