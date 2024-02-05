@@ -1,0 +1,7 @@
+" General Settings
+set update.lastchecktime 1707068354768
+set configversion 2.0
+set mode ignore
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
