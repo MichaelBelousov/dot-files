@@ -198,3 +198,7 @@ lvim.lsp.buffer_mappings.normal_mode['gh'] = lvim.lsp.buffer_mappings.normal_mod
 lvim.keys.normal_mode['<localleader>/'] = false
 lvim.keys.normal_mode['<localleader>/'] = ":nohl<cr>"
 vim.api.nvim_command('nnoremap <localleader>/ :nohl<cr>')
+
+lvim.plugins = {
+  {'andweeb/presence.nvim'},
+}
