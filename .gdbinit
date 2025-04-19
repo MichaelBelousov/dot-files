@@ -14,17 +14,20 @@ set debuginfod enabled on
 # end
 
 # Bentley ##################################
-python
-import sys
-sys.path.append('/home/mike/work/imodel02-docker/')
-import bsiformatters
-print("Registered pretty printers for bentley imodel02 classes")
-end
+# python
+# import sys
+# sys.path.append('/home/mike/work/imodel02-docker/')
+# import bsiformatters
+# print("Registered pretty printers for bentley imodel02 classes")
+# end
 
-skip BentleyM0200::BeJsValue::BeJsValue
-skip BentleyM0200::BeJsConst::BeJsConst
+# skip BentleyM0200::BeJsValue::BeJsValue
+# skip BentleyM0200::BeJsConst::BeJsConst
 
 ############################################
+
+source /home/mike/opensource/zig/tools/zig_gdb_pretty_printers.py
+source /home/mike/opensource/zig/tools/std_gdb_pretty_printers.py
 
 # load installed -gdb.py auto loads (kinda unsafe)
 add-auto-load-safe-path /usr/lib/
