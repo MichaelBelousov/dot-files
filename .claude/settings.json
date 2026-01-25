@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm:*)",
+      "Bash(npm:*)",
+      "Bash(bun:*)",
+      "Bash(cat:*)",
+      "Bash(echo:*)"
+    ],
+    "deny": [
+      "Bash(rm:*)"
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r .message | xargs notify-send 'claude stopped' {}"
+          }
+        ]
+      }
+    ]
+  }
+}
