@@ -26,5 +26,6 @@
 !.config/nvim/init.vim
 !.config/lvim
 !.config/lvim/config.lua
+!.claude/
 !.claude/settings.json
 # why am I ignoring everything again? Ought to read the log

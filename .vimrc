@@ -19,8 +19,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 let g:airline#extensions#tagbar#enabled = 0
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lervag/vimtex'
 Plugin 'Syntastic'
 Plugin 'The-NERD-tree'
@@ -257,6 +257,21 @@ augroup END
 augroup pytex
     autocmd!
     au BufRead,BufNewFile *.pytex set filetype=tex
+augroup END
+
+augroup udatasmith
+    autocmd!
+    au BufRead,BufNewFile *.pytex set filetype=xml
+augroup END
+
+augroup udsanim
+    autocmd!
+    au BufRead,BufNewFile *.pytex set filetype=json
+augroup END
+
+augroup gphl
+    autocmd!
+    au BufRead,BufNewFile *.pytex set filetype=scheme
 augroup END
 
 " neovim

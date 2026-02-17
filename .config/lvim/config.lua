@@ -81,6 +81,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "javascript",
   "json",
   "lua",
+  "markdown",
   "python",
   "typescript",
   "tsx",
@@ -119,6 +120,13 @@ lvim.builtin.treesitter.indent.enable = true
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
+
+-- FIXME: needed this since a manjaro update that broke everything
+require('mason-lspconfig').setup_handlers({
+  function(server)
+    require('lvim.lsp.manager').setup(server)
+  end
+})
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
@@ -200,5 +208,5 @@ lvim.keys.normal_mode['<localleader>/'] = ":nohl<cr>"
 vim.api.nvim_command('nnoremap <localleader>/ :nohl<cr>')
 
 lvim.plugins = {
-  {'andweeb/presence.nvim'},
+  -- {'andweeb/presence.nvim'},
 }

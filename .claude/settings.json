@@ -5,13 +5,14 @@
       "Bash(npm:*)",
       "Bash(bun:*)",
       "Bash(cat:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(zig:*)",
+      "Bash(cargo:*)"
     ],
     "deny": [
       "Bash(rm:*)"
     ]
   },
-  "alwaysThinkingEnabled": true,
   "hooks": {
     "Notification": [
       {
@@ -24,5 +25,6 @@
         ]
       }
     ]
-  }
+  },
+  "alwaysThinkingEnabled": true
 }
