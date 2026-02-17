@@ -193,8 +193,8 @@ __git_complete g __git_main # turns out my stupid alias has been making me type 
 alias s='sudo'
 alias v=lvim
 alias vim=lvim
-alias n=pnpm
-alias n7='pnpm dlx pnpm@7'
+alias n=bun
+alias tf=terraform
 
 ######### functions
 
@@ -269,14 +269,17 @@ export BELL=$'\x07'
 
 alias rmr=/usr/bin/rm
 alias rm=trash
-alias files=nautilus
+alias files=dolphin
 alias mpstree=pstree\ -Tanpl
 
 function code {
     env -u TMUX code $@
 }
 
-export DEBUGINFOD_URLS="https://debuginfod.ubuntu.com"
+export LESS="-F -r $LESS"
+
+# export DEBUGINFOD_URLS="https://debuginfod.ubuntu.com"
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 # TODO: replace this with a committed .bin folder with scripts that I add to path
 # used in .tmux.conf
@@ -288,3 +291,6 @@ EOF
 chmod +x $HOME/.local/bin/tmux_session
 fi
 
+
+# stuff
+bind -x '"\C-l"':reset
