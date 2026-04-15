@@ -1,0 +1,11 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+email = "mike@graphl.tech"
+
+[user]
+email = "mike@graphl.tech"
+name = "Michael Belousov"
+
+[revsets]
+log = '@ | ancestors(trunk()..(visible_heads() & mine()), 2) | trunk()'
+
