@@ -232,6 +232,13 @@ _gbat_completions() {
 }
 complete -F _gbat_completions gbat
 
+function batdiff() {
+    git diff --name-only --relative --diff-filter=d -z | xargs -0 batcat --diff
+}
+
+# batcat --completion bash > /tmp/bat-completions.sh
+# . /tmp/bat-completions.sh
+
 function retmux {
   export TMUX_BAK="$TMUX";
   unset TMUX;

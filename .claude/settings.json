@@ -13,6 +13,7 @@
       "Bash(rm:*)"
     ]
   },
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -26,5 +27,9 @@
       }
     ]
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
+  "awaySummaryEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "agentPushNotifEnabled": true
 }

@@ -274,6 +274,16 @@ augroup gphl
     au BufRead,BufNewFile *.pytex set filetype=scheme
 augroup END
 
+augroup graphl
+    autocmd!
+    au BufRead,BufNewFile *.pytex set filetype=lisp
+augroup END
+
+augroup gr
+    autocmd!
+    au BufRead,BufNewFile *.pytex set filetype=scheme
+augroup END
+
 " neovim
 if has('nvim')
   nnoremap gne :lua vim.diagnostic.goto_next()<cr>

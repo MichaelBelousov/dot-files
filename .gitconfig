@@ -1,0 +1,38 @@
+[core]
+	autocrlf = input
+	safecrlf = false
+	editor = vim
+  pager = delta
+[user]
+	name = Michael Belousov
+	email = michael.belousov98@gmail.com
+[grep]
+	lineNumber = true
+	patternType = perl
+	fallbackToNoIndex = true
+[alias]
+	co = checkout
+	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+	stat = status
+	ds = diff --staged
+	djs = diff ':!/*.yaml'
+	d = diff
+	ls = ls-files
+	c = commit
+	a = add
+	r = rebase
+	s = status
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  dark = true

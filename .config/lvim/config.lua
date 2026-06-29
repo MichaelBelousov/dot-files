@@ -196,6 +196,13 @@ linters.setup {
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*.graphl",
+  callback = function()
+    -- let treesitter use bash highlight for zsh files as well
+    require("nvim-treesitter.highlight").attach(0, "lisp")
+  end,
+})
 
 -- MIKE
 -- my .vimrc, here I'm going to set some things that it seems to overwrite
