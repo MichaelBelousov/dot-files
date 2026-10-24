@@ -11,6 +11,7 @@ log = '@ | ancestors(trunk()..(visible_heads() & mine()), 2) | trunk()'
 
 [ui]
 pager = "delta"
+diff-formatter = ":git"
 
 [ui.diff]
 format = "git"
