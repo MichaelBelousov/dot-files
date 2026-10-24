@@ -9,3 +9,8 @@ name = "Michael Belousov"
 [revsets]
 log = '@ | ancestors(trunk()..(visible_heads() & mine()), 2) | trunk()'
 
+[ui]
+pager = "delta"
+
+[ui.diff]
+format = "git"

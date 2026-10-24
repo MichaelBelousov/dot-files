@@ -16,6 +16,7 @@
 !.scripts/
 !.scripts/*
 !.gitsetup.sh
+!.gitconfig
 !settings.json
 !keybindings.json
 !.inputrc
@@ -26,6 +27,8 @@
 !.config/nvim/init.vim
 !.config/lvim
 !.config/lvim/config.lua
+!.config/jj
+!.config/jj/config.toml
 !.claude/
 !.claude/settings.json
 # why am I ignoring everything again? Ought to read the log
